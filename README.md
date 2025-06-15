@@ -1,127 +1,94 @@
-# Inf Sustavi SLAYER Quiz
+# Inf Sustavi SLAYER
 
-A DOOM-themed interactive quiz application for Information Systems course.
+A Doom-inspired quiz application to help students prepare for Information Systems exams. RIP AND TEAR through your information systems knowledge!
 
-![DOOM-themed Quiz App](./public/skull.svg)
+![Inf Sustavi SLAYER](public/skull.svg)
 
-## Description
+## Features
 
-This is a browser-based quiz application styled with a DOOM game aesthetic. The application features:
+- Interactive quiz with customizable settings
+- Doom-inspired UI/UX with dark theme and retro styling
+- Sound effects and background music for an immersive experience
+- Achievement system to track your progress
+- Customizable question count and time limits
+- Responsive design for different screen sizes
 
-- Interactive quiz with multiple question types
-- DOOM-inspired UI with thematic fonts, colors, and styling
-- Sound effects and background music
-- Achievement system ("Glory Kills")
-- High score tracking
-- Mobile responsive layout
+## Technologies Used
 
-## Prerequisites
+- JavaScript (Vanilla)
+- HTML5
+- CSS3
+- Vite (for build tooling)
+- Font Awesome (for icons)
 
-Before running this project, you need to have the following installed:
+## How to Run the Project Locally
 
-- [Node.js](https://nodejs.org/) (v14.0.0 or higher recommended)
-- npm (comes with Node.js) or [yarn](https://yarnpkg.com/)
+### Prerequisites
 
-## Installation
+- [Node.js](https://nodejs.org/en/) (version 14.x or higher)
+- npm (usually comes with Node.js)
 
-1. Clone the repository or download the source code
-2. Navigate to the project directory in your terminal
+### Installation Steps
 
-```bash
-cd path/to/app
-```
+1. Clone the repository or download the project files
+   ```
+   git clone <repository-url>
+   ```
+
+2. Navigate to the project directory
+   ```
+   cd app
+   ```
 
 3. Install the dependencies
+   ```
+   npm install
+   ```
 
-```bash
-npm install
-# or if you're using yarn
-yarn
+4. Start the development server
+   ```
+   npm run dev
+   ```
+
+5. Open your browser and navigate to the URL shown in the terminal (typically http://localhost:5173)
+
+## Build for Production
+
+To create a production-ready build, run:
 ```
-
-## Running the Project Locally
-
-To run the development server:
-
-```bash
-npm run dev
-# or if you're using yarn
-yarn dev
-```
-
-This will start the Vite development server. You'll see output similar to:
-
-```
-  VITE v6.3.5  ready in XXX ms
-
-  ➜  Local:   http://localhost:5173/
-  ➜  Network: use --host to expose
-  ➜  press h to show help
-```
-
-Open your browser and navigate to [http://localhost:5173](http://localhost:5173) to see the application running.
-
-## Building for Production
-
-To build the project for production:
-
-```bash
 npm run build
-# or if you're using yarn
-yarn build
 ```
 
-This will generate optimized files in the `dist` directory.
+The output will be generated in the `dist` folder, which can be deployed to any static site hosting service.
 
-## Previewing Production Build
+## Preview Production Build
 
-To preview the production build locally:
-
-```bash
+To preview the production build locally, run:
+```
 npm run preview
-# or if you're using yarn
-yarn preview
 ```
-
-This will serve the built files from the `dist` directory.
 
 ## Project Structure
 
 - `index.html` - The main HTML file
-- `src/main.js` - Main JavaScript file with quiz logic
-- `src/style_doom.css` - DOOM-themed styling
-- `public/` - Static assets:
-  - `questions.json` - Quiz questions
-  - `audio/` - Sound effects and music
-  - `fonts/` - Custom fonts
-  - `skull.svg` - App icon
-
-## Playing the Quiz
-
-1. Select your desired quiz settings on the welcome screen
-2. Click "BEGIN SLAUGHTER" to start the quiz
-3. Answer each question (some may have multiple correct answers)
-4. Review your score and achievements at the end
-5. Check your position on the high scores
-
-## Features
-
-- **DOOM-Inspired UI**: Aggressive red and black theme, custom fonts, and style elements from the DOOM universe
-- **Sound Effects**: Audio feedback for correct/incorrect answers and interactions
-- **Background Music**: DOOM-style background track
-- **Audio Controls**: Adjust sound effects and music volume
-- **Responsive Design**: Works on desktop and mobile devices
-- **Achievements System**: Earn "Glory Kills" by meeting certain conditions
-- **High Scores**: Track your best performances
-
-## Credits
-
-- Fonts:
-  - "Eternal Battle" font for headings
-  - "Arvo" font for text
-- Icons from Font Awesome
-- Sound effects and music inspired by DOOM
+- `src/` - Source code directory
+  - `main.js` - Main JavaScript file containing the application logic
+  - `style_doom.css` - The Doom-inspired CSS styles
+- `public/` - Static assets directory
+  - `questions.json` - The quiz questions database
+  - `audio/` - Sound effects and music files
+  - `fonts/` - Custom fonts used in the application
 
 ## License
 
-This project is created for educational purposes. All DOOM-related styling is inspired by id Software's DOOM franchise.
+[MIT License](LICENSE)
+
+## Credits
+
+- Font Awesome for icons
+- Arvo and Eternal Battle fonts for typography
+- Sound effects and music assets (see attribution in the code)
+
+## Acknowledgements
+
+Created for Information Systems course preparation. Keep slaying those demons!
