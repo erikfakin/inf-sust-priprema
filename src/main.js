@@ -724,12 +724,120 @@ function showQuestion() {
   // Clear previous answers and feedback
   answersList.innerHTML = "";
   feedbackContainer.style.display = 'none';
-  document.getElementById('explanation-text').style.display = 'none';
 
   // Record the start time for this question
   questionStartTime = Date.now();
 
-  if (question.type === "fill-in-the-blank") {
+  if (question.type === "matching") {
+    // Create a container for the matching question
+    const matchingContainer = document.createElement("div");
+    matchingContainer.className = "matching-container";
+
+    // Create the left column (fixed items)
+    const leftColumn = document.createElement("div");
+    leftColumn.className = "matching-column left-column";
+
+    // Create the right column (draggable items)
+    const rightColumn = document.createElement("div");
+    rightColumn.className = "matching-column right-column";
+
+    // Create and populate the left column with target drop zones
+    question.leftItems.forEach(item => {
+      const itemElement = document.createElement("div");
+      itemElement.className = "matching-item left-item";
+      itemElement.dataset.id = item.id;
+
+      // Create content container
+      const contentDiv = document.createElement("div");
+      contentDiv.className = "matching-item-content";
+      contentDiv.textContent = item.text;
+      itemElement.appendChild(contentDiv);
+
+      // Create drop zone for draggable answers
+      const dropZone = document.createElement("div");
+      dropZone.className = "matching-drop-zone";
+      dropZone.dataset.leftId = item.id;
+      dropZone.innerHTML = '<span class="drop-placeholder">Drop answer here</span>';
+
+      // Add drag and drop event listeners
+      dropZone.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        dropZone.classList.add('drag-over');
+      });
+
+      dropZone.addEventListener('dragleave', () => {
+        dropZone.classList.remove('drag-over');
+      });
+
+      dropZone.addEventListener('drop', (e) => {
+        e.preventDefault();
+        dropZone.classList.remove('drag-over');
+
+        const draggedId = e.dataTransfer.getData('text/plain');
+        const draggedElement = document.querySelector(`.right-item[data-id="${draggedId}"]`);
+
+        // Check if this drop zone already has a card
+        const existingCard = dropZone.querySelector('.right-item');
+
+        if (existingCard) {
+          // Return the existing card to the right column
+          rightColumn.appendChild(existingCard);
+          existingCard.classList.remove('matched');
+        }
+
+        // Move the dragged card to this drop zone
+        if (draggedElement) {
+          dropZone.querySelector('.drop-placeholder').style.display = 'none';
+          dropZone.appendChild(draggedElement);
+          draggedElement.classList.add('matched');
+        }
+      });
+
+      itemElement.appendChild(dropZone);
+      leftColumn.appendChild(itemElement);
+    });
+
+    // Create draggable cards for right items
+    const shuffledRightItems = shuffleArray([...question.rightItems]);
+    shuffledRightItems.forEach(item => {
+      const rightItem = document.createElement("div");
+      rightItem.className = "matching-item right-item";
+      rightItem.dataset.id = item.id;
+      rightItem.textContent = item.text;
+      rightItem.draggable = true;
+
+      // Add drag event listeners
+      rightItem.addEventListener('dragstart', (e) => {
+        e.dataTransfer.setData('text/plain', item.id);
+        rightItem.classList.add('dragging');
+
+        // If this item was already in a drop zone, make the placeholder visible again
+        const parentDropZone = rightItem.closest('.matching-drop-zone');
+        if (parentDropZone) {
+          parentDropZone.querySelector('.drop-placeholder').style.display = 'block';
+        }
+      });
+
+      rightItem.addEventListener('dragend', () => {
+        rightItem.classList.remove('dragging');
+      });
+
+      rightColumn.appendChild(rightItem);
+    });
+
+    // Add columns to container
+    matchingContainer.appendChild(leftColumn);
+    matchingContainer.appendChild(rightColumn);
+
+    answersList.appendChild(matchingContainer);
+
+    // Add help text
+    const helpText = document.createElement("p");
+    helpText.className = "matching-help";
+    helpText.innerHTML = "Drag the items from the right column and drop them onto the matching items on the left.";
+    answersList.appendChild(helpText);
+
+  } else if (question.type === "fill-in-the-blank") {
     // Create a container for styled input
     const inputContainer = document.createElement("div");
     inputContainer.className = "doom-input-container fill-blank-container";
@@ -865,7 +973,64 @@ function nextQuestion() {
     let userAnswer;
     let isCorrect = false;
 
-    if (question.type === "fill-in-the-blank") {
+    if (question.type === "matching") {
+      // Get all drop zones with matched items
+      const dropZones = document.querySelectorAll('.matching-drop-zone');
+      const userPairs = [];
+
+      // Build array of user's paired selections
+      dropZones.forEach(dropZone => {
+        const matchedItem = dropZone.querySelector('.right-item');
+        if (matchedItem) {  // Only count those that have a matched item
+          userPairs.push({
+            leftId: dropZone.dataset.leftId,
+            rightId: matchedItem.dataset.id
+          });
+        }
+      });
+
+      // Store the user's answers for review later
+      userAnswer = userPairs.map(pair => {
+        const leftItem = question.leftItems.find(item => item.id === pair.leftId);
+        const rightItem = question.rightItems.find(item => item.id === pair.rightId);
+        return `${leftItem.text} → ${rightItem.text}`;
+      });
+
+      // Check if all pairs are correct and user answered all items
+      isCorrect = userPairs.length === question.correctPairs.length &&
+        userPairs.every(userPair => {
+          return question.correctPairs.some(correctPair =>
+            correctPair.leftId === userPair.leftId &&
+            correctPair.rightId === userPair.rightId
+          );
+        });
+
+      // Show correct/incorrect visual feedback on the items
+      dropZones.forEach(dropZone => {
+        const leftId = dropZone.dataset.leftId;
+        const matchedItem = dropZone.querySelector('.right-item');
+
+        if (matchedItem) {
+          const rightId = matchedItem.dataset.id;
+
+          const matchIsCorrect = question.correctPairs.some(pair =>
+            pair.leftId === leftId && pair.rightId === rightId
+          );
+
+          if (matchIsCorrect) {
+            dropZone.classList.add('matching-correct');
+            matchedItem.classList.add('matching-correct');
+          } else {
+            dropZone.classList.add('matching-incorrect');
+            matchedItem.classList.add('matching-incorrect');
+          }
+        } else {
+          // No answer was provided for this item
+          dropZone.classList.add('matching-incomplete');
+        }
+      });
+
+    } else if (question.type === "fill-in-the-blank") {
       userAnswer = document.getElementById("user-answer").value.trim();
 
       if (Array.isArray(question.correctAnswer)) {
@@ -892,6 +1057,22 @@ function nextQuestion() {
       isCorrect = userAnswer.length === correctAnswers.length &&
         userAnswer.every(answer => correctAnswers.includes(answer)) &&
         correctAnswers.every(answer => userAnswer.includes(answer));
+
+      // Add visual feedback for each answer option
+      const allOptions = document.querySelectorAll('#answer-buttons .answer-option');
+      allOptions.forEach(option => {
+        const index = parseInt(option.dataset.index);
+        const isSelectedByUser = option.classList.contains('selected');
+        const isCorrectAnswer = question.answers[index].correct;
+
+        if (isCorrectAnswer) {
+          // This is a correct answer
+          option.classList.add('correct');
+        } else if (isSelectedByUser && !isCorrectAnswer) {
+          // This is an incorrect answer that was selected
+          option.classList.add('incorrect');
+        }
+      });
     }
 
     // Calculate time taken to answer
@@ -902,7 +1083,15 @@ function nextQuestion() {
     userAnswers.push({
       question: question.text,
       userAnswer: userAnswer,
-      correctAnswer: question.type === "fill-in-the-blank" ? question.correctAnswer : question.answers.filter(a => a.correct).map(a => a.text),
+      correctAnswer: question.type === "matching" ?
+        question.correctPairs.map(pair => {
+          const leftItem = question.leftItems.find(item => item.id === pair.leftId);
+          const rightItem = question.rightItems.find(item => item.id === pair.rightId);
+          return `${leftItem.text} → ${rightItem.text}`;
+        }) :
+        question.type === "fill-in-the-blank" ?
+          question.correctAnswer :
+          question.answers.filter(a => a.correct).map(a => a.text),
       isCorrect: isCorrect,
       timeTaken: timeTaken
     });
@@ -977,76 +1166,58 @@ function showFeedback(isCorrect) {
 
   feedbackText.textContent = isCorrect ? 'DEMON SLAYED!' : 'TARGET SURVIVED!';
 
-  // Get selected answers (both for single and multiple choice)
-  const selectedOptions = document.querySelectorAll('#answer-buttons .answer-option.selected');
-  const selectedValues = Array.from(selectedOptions).map(option => {
-    const index = parseInt(option.dataset.index); // Using original index
-    return question.answers[index].text;
-  });
-
-  if (!isCorrect) {
-    // Show correct answers
-    const correctAnswers = question.type === "fill-in-the-blank" ? question.correctAnswer : question.answers.filter(a => a.correct).map(a => a.text);
-    const correctAnswerString = Array.isArray(correctAnswers) ? correctAnswers.join(", ") : correctAnswers;
-    correctAnswerText.textContent = `PROPER WEAPON: ${correctAnswerString}`;
-
-    // Display explanation if available
-    const explanationElement = document.getElementById('explanation-text');
-    if (question.explanation) {
-      explanationElement.textContent = question.explanation;
-      explanationElement.style.display = 'block';
-    } else {
-      explanationElement.style.display = 'none';
-    }
-
-    // Highlight correct and incorrect answers
-    if (question.type !== "fill-in-the-blank") {
-      document.querySelectorAll('#answer-buttons .answer-option').forEach((option) => {
-        const originalIndex = parseInt(option.dataset.index);
-        const isCorrectAnswer = question.answers[originalIndex].correct;
-        const isSelected = option.classList.contains('selected');
-
-        if (isCorrectAnswer) {
-          // Always highlight correct answers clearly
-          option.classList.add('correct');
-          // Force a repaint to ensure the styles are applied
-          option.offsetHeight;
-        }
-
-        // If this option was selected but is wrong, mark it as incorrect
-        if (isSelected && !isCorrectAnswer) {
-          option.classList.add('incorrect');
-          // Force a repaint to ensure the styles are applied
-          option.offsetHeight;
-        }
-      });
-    }
-  } else {
-    // For correct answers
+  // Clear the correct answer text when answer is correct
+  if (isCorrect) {
     correctAnswerText.textContent = '';
-
-    // Hide explanation for correct answers
-    document.getElementById('explanation-text').style.display = 'none';
-
-    // Highlight the selected answers as correct
-    if (question.type !== "fill-in-the-blank") {
-      // For multiple choice questions, we need to make sure all selected answers are correct
-      document.querySelectorAll('#answer-buttons .answer-option').forEach((option) => {
-        const originalIndex = parseInt(option.dataset.index);
-        const isCorrectAnswer = question.answers[originalIndex].correct;
-        const isSelected = option.classList.contains('selected');
-
-        if (isSelected) {
-          option.classList.add('correct');
-          // Force a repaint to ensure the styles are applied
-          option.offsetHeight;
-        }
-      });
-    }
+    document.getElementById('explanation-text').textContent = question.explanation || '';
   }
 
-  // Add animation to the feedback
-  feedbackContainer.classList.add(isCorrect ? 'correct-animation' : 'incorrect-animation');
+  if (question.type === "matching") {
+    // For matching questions, show the correct pairs
+    if (!isCorrect) {
+      const correctPairsText = question.correctPairs.map(pair => {
+        const leftItem = question.leftItems.find(item => item.id === pair.leftId);
+        const rightItem = question.rightItems.find(item => item.id === pair.rightId);
+        return `${leftItem.text} → ${rightItem.text}`;
+      }).join("; ");
+
+      correctAnswerText.textContent = `CORRECT MATCHES: ${correctPairsText}`;
+      document.getElementById('explanation-text').style.display = 'block';
+      document.getElementById('explanation-text').textContent = question.explanation || '';
+    }
+  } else if (question.type === "fill-in-the-blank") {
+    // Get selected answers (both for single and multiple choice)
+    const selectedOptions = document.querySelectorAll('#answer-buttons .answer-option.selected');
+    const selectedValues = Array.from(selectedOptions).map(option => {
+      const index = parseInt(option.dataset.index); // Using original index
+      return question.answers[index].text;
+    });
+
+    if (!isCorrect) {
+      // Show correct answers
+      const correctAnswers = question.type === "fill-in-the-blank" ? question.correctAnswer : question.answers.filter(a => a.correct).map(a => a.text);
+      const correctAnswerString = Array.isArray(correctAnswers) ? correctAnswers.join(", ") : correctAnswers;
+      correctAnswerText.textContent = `PROPER WEAPON: ${correctAnswerString}`;
+      document.getElementById('explanation-text').style.display = 'block';
+      document.getElementById('explanation-text').textContent = question.explanation || '';
+    }
+  } else {
+    // Get selected answers (both for single and multiple choice)
+    const selectedOptions = document.querySelectorAll('#answer-buttons .answer-option.selected');
+    const selectedValues = Array.from(selectedOptions).map(option => {
+      const index = parseInt(option.dataset.index); // Using original index
+      return question.answers[index].text;
+    });
+
+    if (!isCorrect) {
+      // Show correct answers
+      const correctAnswers = question.answers.filter(a => a.correct).map(a => a.text);
+      const correctAnswerString = Array.isArray(correctAnswers) ? correctAnswers.join(", ") : correctAnswers;
+      correctAnswerText.textContent = `PROPER WEAPON: ${correctAnswerString}`;
+      document.getElementById('explanation-text').style.display = 'block';
+      document.getElementById('explanation-text').textContent = question.explanation || '';
+    }
+  }
 }
 
 // Update the progress bar
@@ -1214,17 +1385,6 @@ function displayAchievements(stats) {
     counterElement.innerHTML = `${achievementCount}/${Object.keys(ACHIEVEMENTS).length} GLORY KILLS`;
     achievementsList.appendChild(counterElement);
 
-    // Add sound effect for achievements (if enabled)
-    if (gameSettings.soundEffects) {
-      try {
-        const audio = new Audio();
-        audio.volume = 0.7;
-        audio.src = '/audio/correct.mp3';  // Use existing sound for now
-        audio.play();
-      } catch (err) {
-        console.error("Failed to play achievement sound", err);
-      }
-    }
 
     // Display each achievement with a DOOM-style effect
     earnedAchievements.forEach((achievement, index) => {
@@ -1278,8 +1438,28 @@ function createDetailedSummary() {
     const questionSummary = document.createElement("div");
     questionSummary.className = entry.isCorrect ? 'correct' : 'incorrect';
 
-    const userAnswerFormatted = Array.isArray(entry.userAnswer) ? entry.userAnswer.join(", ") : entry.userAnswer;
-    const correctAnswerFormatted = Array.isArray(entry.correctAnswer) ? entry.correctAnswer.join(", ") : entry.correctAnswer;
+    let userAnswerFormatted;
+    let correctAnswerFormatted;
+
+    if (entry.question.includes("Upari pojmove") || entry.question.includes("matching")) {
+      // Handle matching question display differently
+      userAnswerFormatted = Array.isArray(entry.userAnswer) ?
+        entry.userAnswer.join("<br>") :
+        entry.userAnswer;
+
+      correctAnswerFormatted = Array.isArray(entry.correctAnswer) ?
+        entry.correctAnswer.join("<br>") :
+        entry.correctAnswer;
+    } else {
+      // Handle standard question types
+      userAnswerFormatted = Array.isArray(entry.userAnswer) ?
+        entry.userAnswer.join(", ") :
+        entry.userAnswer;
+
+      correctAnswerFormatted = Array.isArray(entry.correctAnswer) ?
+        entry.correctAnswer.join(", ") :
+        entry.correctAnswer;
+    }
 
     questionSummary.innerHTML = `
       <p><strong>BATTLE ${index + 1}:</strong> ${entry.question}</p>

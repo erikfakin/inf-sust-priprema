@@ -2,7 +2,6 @@
     {
         "text": "Označi bitna svojstva svake informacije:",
         "category": "Predavanje 1",
-        "explanation": "Bitna svojstva informacije su: vrijednost u vremenu (informacija ima vrijednost samo u određenom trenutku), količina (količina informacije koja se prenosi) i vrsnoća (kvaliteta informacije).",
         "answers": [
             {
                 "text": "Broj stranica na kojima je informacija zapisana",
@@ -33,7 +32,6 @@
     {
         "text": "Označite komponente poslovnog sustava:",
         "category": "Predavanje 1",
-        "explanation": "Poslovni sustav čine tri glavne komponente: ljudska komponenta (zaposlenici i njihovo znanje), mrežna komponenta (infrastruktura) i organizacijska komponenta (procesi i organizacijska struktura).",
         "answers": [
             {
                 "text": "Ljudska komponenta",
@@ -60,7 +58,6 @@
     {
         "text": "Pod pojmom sustava podrazumijeva se svaki uređeni skup koji se sastoji od najviše dva elementa koji međusobnim djelovanjem ostvaruju neku funkciju cjeline.",
         "category": "Predavanje 1",
-        "explanation": "Ova tvrdnja je netočna jer sustav može sadržavati više od dva elementa. Točna definicija je da je sustav uređeni skup koji se sastoji od barem dva elementa koji međusobnim djelovanjem ostvaruju neku funkciju cjeline.",
         "answers": [
             {
                 "text": "Točno",
@@ -75,7 +72,6 @@
     {
         "text": "Faza konsolidacije u životnom ciklusu sustava usmjerena je na stabilizaciju i optimiziranje sustava nakon uspješne implementacije.",
         "category": "Predavanje 1",
-        "explanation": "Tijekom faze konsolidacije sustav se stabilizira i optimizira nakon implementacije. U ovoj fazi se rješavaju problemi, otklanjaju greške i podešavaju performanse kako bi sustav radio što učinkovitije.",
         "answers": [
             {
                 "text": "Točno",
@@ -89,7 +85,6 @@
     },
     {
         "text": "Životni ciklus sustava sastoji se od četiri osnovne razvojne faze. Naziv treće faze je:",
-        "explanation": "Četiri osnovne faze životnog ciklusa sustava su: inicijalizacija, ekspanzija, konsolidacija i zrelost. Konsolidacija je treća faza u kojoj se sustav stabilizira nakon brzog rasta u fazi ekspanzije.",
         "answers": [
             {
                 "text": "Faza ekspanzije",
@@ -840,7 +835,6 @@
         "text": "Tijekom izvođenja ___ procedura podaci se izvlače iz različitih izvora (ekstrahiraju), transformiraju se u odgovarajući oblik (pročišćavaju, \"popravljaju\") i zatim se učitaju, odnosno unose u skladište podataka.",
         "type": "fill-in-the-blank",
         "category": "Predavanje 7",
-        "explanation": "ETL (Extract, Transform, Load) je proces kojim se podaci iz više izvora ekstrahiraju, transformiraju u odgovarajući format i učitavaju u skladište podataka za potrebe analize i izvještavanja.",
         "correctAnswer": [
             "ETL",
             "etl",
@@ -1419,7 +1413,6 @@
     {
         "text": "Označi koje aplikacije pronalazimo u modulu analitike i planiranja rada zaposlenika",
         "category": "Predavanje 10",
-        "explanation": "Modul analitike i planiranja rada zaposlenika sadrži aplikacije za: planiranje troškova rada, analitiku i mjerenje procesa upravljanja ljudskim resursima, planiranje potreba za zapošljavanjem i analitiku za potrebe upravljanja talentima. Ne uključuje analitiku konkurenata koja pripada drugim modulima.",
         "answers": [
             {
                 "text": "Planiranje troškova rada",
@@ -2488,6 +2481,561 @@
         "type": "fill-in-the-blank",
         "correctAnswer": [
             "4"
+        ]
+    },
+    {
+        "text": "Upari pojmove sa odgovarajućim modulima",
+        "category": "Predavanje 8",
+        "type": "matching",
+        "leftItems": [
+            {
+                "id": "1",
+                "text": "IPS upravljanja trajnom poslovnom imovinom"
+            },
+            {
+                "id": "2",
+                "text": "Modul tehničkog upravljanja i održavanja trajne poslovne imovine"
+            },
+            {
+                "id": "3",
+                "text": "Modul pribavljanja i deaktiviranja TPI-a"
+            },
+            {
+                "id": "4",
+                "text": "Modul upravljanja portfeljem trajne i poslovne imovine"
+            }
+        ],
+        "rightItems": [
+            {
+                "id": "A",
+                "text": "modul tehničkog upravljanja i održavanja TPI-a"
+            },
+            {
+                "id": "B",
+                "text": "planiranje modernizacije TPI-a"
+            },
+            {
+                "id": "C",
+                "text": "ugovaranje s odabranim dobavljačem"
+            },
+            {
+                "id": "D",
+                "text": "praćenje i ocjenjivanje vrijednosti TPI-a"
+            }
+        ],
+        "correctPairs": [
+            {
+                "leftId": "1",
+                "rightId": "A"
+            },
+            {
+                "leftId": "2",
+                "rightId": "B"
+            },
+            {
+                "leftId": "3",
+                "rightId": "C"
+            },
+            {
+                "leftId": "4",
+                "rightId": "D"
+            }
+        ]
+    },
+    {
+        "text": "Upari podsustave s njihovim opisima",
+        "category": "Predavanje 5",
+        "type": "matching",
+        "leftItems": [
+            {
+                "id": "1",
+                "text": "Podsustav proizvodnje"
+            },
+            {
+                "id": "2",
+                "text": "Financijski podsustav"
+            },
+            {
+                "id": "3",
+                "text": "Podsustav ljudskih resursa"
+            },
+            {
+                "id": "4",
+                "text": "Logički podsustav"
+            }
+        ],
+        "rightItems": [
+            {
+                "id": "A",
+                "text": "upravljanje i kontrola proizvodnje, praćenje radnih naloga, praćenje projekta, upravljanje kvalitetom"
+            },
+            {
+                "id": "B",
+                "text": "Glavna knjiga"
+            },
+            {
+                "id": "C",
+                "text": "plaće, radna mjesta, obrazovanje"
+            },
+            {
+                "id": "D",
+                "text": "planiranje materijala, nabava, transport, distribucija"
+            }
+        ],
+        "correctPairs": [
+            {
+                "leftId": "1",
+                "rightId": "A"
+            },
+            {
+                "leftId": "2",
+                "rightId": "B"
+            },
+            {
+                "leftId": "3",
+                "rightId": "C"
+            },
+            {
+                "leftId": "4",
+                "rightId": "D"
+            }
+        ]
+    },
+    {
+        "text": "Upari vanjske izvore podataka s njihovim sadržajem",
+        "category": "Predavanje 5",
+        "type": "matching",
+        "leftItems": [
+            {
+                "id": "1",
+                "text": "Psihometrijski podaci"
+            },
+            {
+                "id": "2",
+                "text": "Podaci o konkurentnosti"
+            },
+            {
+                "id": "3",
+                "text": "Strukovni podaci"
+            },
+            {
+                "id": "4",
+                "text": "Robni podaci"
+            },
+            {
+                "id": "5",
+                "text": "Ekonomski podaci"
+            },
+            {
+                "id": "6",
+                "text": "Opći ekonomski podaci"
+            }
+        ],
+        "rightItems": [
+            {
+                "id": "A",
+                "text": "profiliranje kupaca, motivacije"
+            },
+            {
+                "id": "B",
+                "text": "proizvodi, usluge, promjene u konkurentskom okruženju"
+            },
+            {
+                "id": "C",
+                "text": "tehnološki trendovi, marketinški trendovi"
+            },
+            {
+                "id": "D",
+                "text": "cijene sirovina, raspoloživost izvora sirovina"
+            },
+            {
+                "id": "E",
+                "text": "prihodi pojedinih društvenih skupina, ponašanje potrošača"
+            },
+            {
+                "id": "F",
+                "text": "fluktuacija tečajeva valuta, politički indikatori, kretanje kamata, burzovni podaci"
+            }
+        ],
+        "correctPairs": [
+            {
+                "leftId": "1",
+                "rightId": "A"
+            },
+            {
+                "leftId": "2",
+                "rightId": "B"
+            },
+            {
+                "leftId": "3",
+                "rightId": "C"
+            },
+            {
+                "leftId": "4",
+                "rightId": "D"
+            },
+            {
+                "leftId": "5",
+                "rightId": "E"
+            },
+            {
+                "leftId": "6",
+                "rightId": "F"
+            }
+        ]
+    },
+    {
+        "text": "Upari aplikacije administracije zaposlenika s njihovim opisom",
+        "category": "Predavanje 9",
+        "type": "matching",
+        "leftItems": [
+            {
+                "id": "1",
+                "text": "Obračun plaća i ostalih naknada za život"
+            },
+            {
+                "id": "2",
+                "text": "Upravljanje zapošljavanjem"
+            },
+            {
+                "id": "3",
+                "text": "Matična evidencija i administracija zaposlenika"
+            }
+        ],
+        "rightItems": [
+            {
+                "id": "A",
+                "text": "Notorna je činjenica da ljudi rade zato da bi zaradili sredstva potrebna za život."
+            },
+            {
+                "id": "B",
+                "text": "Povezuje funkcije upravljanja ljudskim resursima određenog poduzeća sa specijaliziranim agencijama za ponalaženje taletiranih stručnjaka onog profila koji poduzeću treba."
+            },
+            {
+                "id": "C",
+                "text": "Prilikom zapošljavanja bilježe se osnovni podaci o zaposleniku."
+            }
+        ],
+        "correctPairs": [
+            {
+                "leftId": "1",
+                "rightId": "A"
+            },
+            {
+                "leftId": "2",
+                "rightId": "B"
+            },
+            {
+                "leftId": "3",
+                "rightId": "C"
+            }
+        ]
+    },
+    {
+        "text": "Upari aplikacije s odgovarajućim objašnjenjima",
+        "category": "Predavanje 9",
+        "type": "matching",
+        "leftItems": [
+            {
+                "id": "1",
+                "text": "Kompenzacijski menadžment"
+            },
+            {
+                "id": "2",
+                "text": "Upravljanje karijerom"
+            },
+            {
+                "id": "3",
+                "text": "Upravljanje učinkovitošću zaposlenika"
+            }
+        ],
+        "rightItems": [
+            {
+                "id": "A",
+                "text": "Implementira inovativne strategije nagrađivanja djelatnika za obavljen rad i ostvarene rezultate"
+            },
+            {
+                "id": "B",
+                "text": "Omogućuje poslovodstvu poduzeća otkrivanje aspiracija i ambicija nadarenih zaposlenika"
+            },
+            {
+                "id": "C",
+                "text": "Aplikacija ima za cilj poticati i navoditi zaposlenike na što kvalitetnije ostvarivanje misije i ciljeva poduzeća"
+            }
+        ],
+        "correctPairs": [
+            {
+                "leftId": "1",
+                "rightId": "A"
+            },
+            {
+                "leftId": "2",
+                "rightId": "B"
+            },
+            {
+                "leftId": "3",
+                "rightId": "C"
+            }
+        ]
+    },
+    {
+        "text": "Upari module s odgovarajućim aplikacijama - IPS računovodstva",
+        "category": "Predavanje 10",
+        "type": "matching",
+        "leftItems": [
+            {
+                "id": "1",
+                "text": "Modul računovodstvenog praćenja proizvodnje i zaliha gotovih proizvoda"
+            },
+            {
+                "id": "2",
+                "text": "Modul knjigovodstvenog praćenja dugotrajne imovine"
+            },
+            {
+                "id": "3",
+                "text": "Modul računovodstvenog praćenja zaliha trgovačke robe"
+            },
+            {
+                "id": "4",
+                "text": "Glavna knjiga"
+            },
+            {
+                "id": "5",
+                "text": "Modul obračuna plaća djelatnika"
+            },
+            {
+                "id": "6",
+                "text": "Modul računovodstvenog praćenja zaliha sirovina i materijala"
+            }
+        ],
+        "rightItems": [
+            {
+                "id": "A",
+                "text": "Izvještavanje o proizvodnji i gotovim proizvodima"
+            },
+            {
+                "id": "B",
+                "text": "Kontrola poslovanja s dugotrajnom imovinom"
+            },
+            {
+                "id": "C",
+                "text": "Evidencija trgovačke robe u poslovnim knjigama"
+            },
+            {
+                "id": "D",
+                "text": "Obrada knjigovodstvenih isprava poduzeću"
+            },
+            {
+                "id": "E",
+                "text": "Kontrolni postupci"
+            },
+            {
+                "id": "F",
+                "text": "Kontrola materijalnog poslovanja"
+            }
+        ],
+        "correctPairs": [
+            {
+                "leftId": "1",
+                "rightId": "A"
+            },
+            {
+                "leftId": "2",
+                "rightId": "B"
+            },
+            {
+                "leftId": "3",
+                "rightId": "C"
+            },
+            {
+                "leftId": "4",
+                "rightId": "D"
+            },
+            {
+                "leftId": "5",
+                "rightId": "E"
+            },
+            {
+                "leftId": "6",
+                "rightId": "F"
+            }
+        ]
+    },
+    {
+        "text": "Upari module s odgovarajućim aplikacijama - IPS nabave",
+        "category": "Predavanje 11",
+        "type": "matching",
+        "leftItems": [
+            {
+                "id": "1",
+                "text": "Modul ulazne logistike"
+            },
+            {
+                "id": "2",
+                "text": "Modul pripreme nabave i naloga za nabavu"
+            },
+            {
+                "id": "3",
+                "text": "Modul suradnje s dobavljačima"
+            },
+            {
+                "id": "4",
+                "text": "Modul upravljanja zalihama i skladišnim poslovanjem"
+            }
+        ],
+        "rightItems": [
+            {
+                "id": "A",
+                "text": "Prihvat isporuka"
+            },
+            {
+                "id": "B",
+                "text": "Priprema naloga za nabavu potrošnih dobara"
+            },
+            {
+                "id": "C",
+                "text": "Obrada ulaznih računa"
+            },
+            {
+                "id": "D",
+                "text": "Praćenje zaliha i upravljanje skladištem"
+            }
+        ],
+        "correctPairs": [
+            {
+                "leftId": "1",
+                "rightId": "A"
+            },
+            {
+                "leftId": "2",
+                "rightId": "B"
+            },
+            {
+                "leftId": "3",
+                "rightId": "C"
+            },
+            {
+                "leftId": "4",
+                "rightId": "D"
+            }
+        ]
+    },
+    {
+        "text": "Upari načine planiranja proizvodnje s objašnjenjima",
+        "category": "Predavanje 12",
+        "type": "matching",
+        "leftItems": [
+            {
+                "id": "1",
+                "text": "Prvi način planiranja"
+            },
+            {
+                "id": "2",
+                "text": "Drugi način planiranja"
+            },
+            {
+                "id": "3",
+                "text": "Treći način planiranja"
+            }
+        ],
+        "rightItems": [
+            {
+                "id": "A",
+                "text": "Izrada glavnog plana proizvodnje koji se temelji na analizi podataka o prodaji artikala za protekla razdoblja, uzimajući u obzir i pretpostavke buduće potražnje."
+            },
+            {
+                "id": "B",
+                "text": "Zahtjeva da se s proizvodnjom započne kada se dobije odgovarajući signal s tržišta."
+            },
+            {
+                "id": "C",
+                "text": "Najsloženiji i zahtjeva korištenje vrlo kompleksnih informatičkih rješenja."
+            }
+        ],
+        "correctPairs": [
+            {
+                "leftId": "1",
+                "rightId": "A"
+            },
+            {
+                "leftId": "2",
+                "rightId": "B"
+            },
+            {
+                "leftId": "3",
+                "rightId": "C"
+            }
+        ]
+    },
+    {
+        "text": "Upari module s njihovim opisima - IPS prodaje",
+        "category": "Predavanje 13",
+        "type": "matching",
+        "leftItems": [
+            {
+                "id": "1",
+                "text": "Modul upravljanja izlaznom logistikom i transportom"
+            },
+            {
+                "id": "2",
+                "text": "Modul pružanja stručnih savjeta i usluga"
+            },
+            {
+                "id": "3",
+                "text": "Modul poticanja na kupnju i sofisticiranih oblika prodaje"
+            },
+            {
+                "id": "4",
+                "text": "Modul upravljanja poslijeprodajnim uslugama"
+            },
+            {
+                "id": "5",
+                "text": "Modul upravljanja narudžbama u prodaji"
+            }
+        ],
+        "rightItems": [
+            {
+                "id": "A",
+                "text": "Upravljanje zalihama i skladištenjem gotovih proizvoda"
+            },
+            {
+                "id": "B",
+                "text": "Obrazovanje i uvježbavanje korisnika"
+            },
+            {
+                "id": "C",
+                "text": "Planiranje akcija poticanja na kupnju"
+            },
+            {
+                "id": "D",
+                "text": "Potpora uslugama nadogradnje i proširenja funkcionalnosti"
+            },
+            {
+                "id": "E",
+                "text": "Upravljanje povratnom ambalažom"
+            }
+        ],
+        "correctPairs": [
+            {
+                "leftId": "1",
+                "rightId": "A"
+            },
+            {
+                "leftId": "2",
+                "rightId": "B"
+            },
+            {
+                "leftId": "3",
+                "rightId": "C"
+            },
+            {
+                "leftId": "4",
+                "rightId": "D"
+            },
+            {
+                "leftId": "5",
+                "rightId": "E"
+            }
         ]
     }
 ]
