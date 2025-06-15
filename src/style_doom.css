@@ -1396,6 +1396,7 @@ body::after {
 .fill-blank-container {
     margin: 2rem auto;
     max-width: 90%;
+    width: 100%;
 }
 
 .fill-blank-container .input-icon {
