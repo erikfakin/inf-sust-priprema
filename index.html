@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inf Sustavi Slayer</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="icon" type="image/x-icon" href="/skull.svg">
+  <script type="module" crossorigin src="/assets/index-DxMpFZmF.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-y-kjdRBb.css">
+</head>
+
+<body>
+  <div id="app-container">
+    <!-- Persistent Audio Controls -->
+    <div id="audio-controls">
+      <button id="sound-toggle-btn" class="audio-btn" title="Toggle Sound Effects">
+        <i class="fas fa-volume-up"></i>
+      </button>
+      <div class="music-control-group">
+        <i class="fas fa-music music-icon"></i>
+        <div class="volume-slider-container always-visible">
+          <input type="range" id="music-volume-slider" min="0" max="100" value="20" class="volume-slider">
+          <span id="volume-value-display" class="volume-value">20%</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Welcome Screen -->
+    <div id="welcome-screen" class="screen active">
+      <h1><i class="fas fa-skull"></i> Inf Sustavi SLAYER</h1>
+      <p class="tagline">RIP AND TEAR THROUGH INFORMATION SYSTEMS</p>
+
+      <div class="settings-container">
+
+        <div class="setting-group">
+          <label for="question-count">Number of questions:</label>
+          <select id="question-count" class="custom-select">
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="15" selected>15</option>
+            <option value="20">20</option>
+          </select>
+        </div>
+
+        <div class="setting-group">
+          <label for="timer-setting">Time limit:</label>
+          <select id="timer-setting" class="custom-select">
+            <option value="600">10 minutes</option>
+            <option value="1200" selected>20 minutes</option>
+            <option value="1800">30 minutes</option>
+          </select>
+        </div>
+
+        <!-- Hidden sound controls for settings storage -->
+        <div style="display: none;">
+          <input type="checkbox" id="sound-toggle" checked>
+          <input type="checkbox" id="music-toggle" checked>
+        </div>
+      </div>
+
+      <button id="start-btn" class="btn primary-btn pulse">BEGIN SLAUGHTER</button>
+      <div class="high-scores-link">
+        <a href="#" id="view-high-scores"><i class="fas fa-skull-crossbones"></i> LEGENDARY DEMON SLAYERS</a>
+      </div>
+    </div>
+
+    <!-- Quiz Screen -->
+    <div id="quiz-container" class="screen">
+      <div class="quiz-header">
+        <div class="quiz-info">
+          <div id="category-badge">Category Badge</div>
+        </div>
+        <div class="quiz-progress">
+          <div id="progress-bar-container">
+            <div id="progress-bar"></div>
+          </div>
+          <div id="question-counter">Question <span id="current-question">1</span>/<span id="total-questions">15</span>
+          </div>
+        </div>
+      </div>
+
+      <div id="timer-container">
+        <div id="timer-bar"></div>
+        <div id="timer"><span id="time-display">20:00</span><i class="fas fa-clock"></i> </div>
+      </div>
+
+      <div id="question-container">
+        <div id="question-number">Question 1</div>
+        <h2 id="question"></h2>
+        <div id="answer-buttons" class="btn-grid"></div>
+      </div>
+
+      <div id="feedback-container">
+        <div id="feedback-icon"></div>
+        <div id="feedback-text"></div>
+        <div id="correct-answer"></div>
+        <div id="explanation-text" class="explanation"></div>
+      </div>
+
+      <div id="controls">
+        <button id="next-btn" class="btn">Next <i class="fas fa-arrow-right"></i></button>
+      </div>
+
+      <div id="score-container">
+        <div class="score-box">
+          <i class="fas fa-skull"></i>
+          <span id="score">0</span> KILLS
+        </div>
+      </div>
+    </div>
+
+    <!-- Results Screen -->
+    <div id="results-screen" class="screen">
+      <h1 id="results-title">You Slayed It!</h1>
+      <div id="confetti-container" class="confetti-container"></div>
+
+      <div id="results-summary">
+        <div class="result-stat">
+          <i class="fas fa-skull"></i>
+          <div class="stat-label">DEMON KILLS</div>
+          <div id="final-score" class="stat-value">0/15</div>
+        </div>
+        <div class="result-stat">
+          <i class="fas fa-hourglass-half"></i>
+          <div class="stat-label">SLAUGHTER TIME</div>
+          <div id="time-taken" class="stat-value">0:00</div>
+        </div>
+        <div class="result-stat">
+          <i class="fas fa-crosshairs"></i>
+          <div class="stat-label">ACCURACY</div>
+          <div id="accuracy" class="stat-value">0%</div>
+        </div>
+      </div>
+
+      <div id="achievement-container">
+        <h3><i class="fas fa-skull"></i> SLAUGHTER RECORDS</h3>
+        <div id="achievements-list"></div>
+      </div>
+
+      <div id="results-buttons">
+        <button id="restart-button" class="btn primary-btn"><i class="fas fa-skull"></i> RESTART SLAUGHTER</button>
+        <button id="view-answers-btn" class="btn secondary-btn"><i class="fas fa-list"></i> CARNAGE REPORT</button>
+        <button id="save-score-btn" class="btn primary-btn"><i class="fas fa-user-edit"></i> ETCH IN BLOOD</button>
+
+      </div>
+    </div>
+
+    <!-- Answer Review Screen -->
+    <div id="review-screen" class="screen">
+      <h1><i class="fas fa-list"></i> CARNAGE REPORT</h1>
+      <div id="summary" class="review-list"></div>
+      <button id="back-to-results" class="btn primary-btn"><i class="fas fa-arrow-left"></i> BACK TO GLORY</button>
+    </div>
+
+    <!-- High Scores Screen -->
+    <div id="high-scores-screen" class="screen">
+      <h1><i class="fas fa-skull-crossbones"></i> DOOM SLAYERS HALL</h1>
+      <div id="high-scores-list"></div>
+      <button id="back-btn" class="btn primary-btn"><i class="fas fa-home"></i> RETURN TO BASE</button>
+      <button id="clear-scores-btn" class="btn secondary-btn"><i class="fas fa-trash"></i> PURGE RECORDS</button>
+    </div>
+  </div>
+
+  <!-- Audio Elements -->
+  <audio id="correct-sound" preload="auto">
+    <source src="/audio/correct.mp3" type="audio/mpeg">
+  </audio>
+  <audio id="wrong-sound" preload="auto">
+    <source src="/audio/wrong.mp3" type="audio/mpeg">
+  </audio>
+  <audio id="click-sound" preload="auto">
+    <source src="/audio/click.mp3" type="audio/mpeg">
+  </audio>
+  <audio id="complete-sound" preload="auto">
+    <source src="/audio/complete.mp3" type="audio/mpeg">
+  </audio>
+  <audio id="background-music" preload="auto" loop>
+    <source src="/audio/background-music.mp3" type="audio/mpeg">
+  </audio>
+
+</body>
+
+</html>
