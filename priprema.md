@@ -646,10 +646,13 @@ Stablo odlučivanja koristi se samo za vizualizaciju, a ne za prikazivanje skupa
 
 ## Pitanje 5  
 **Upari**  
-- **Podsustav proizvodnje** → upravljanje i kontrola proizvodnje, praćenje radnih naloga, praćenje projekta, upravljanje kvalitetom  
-- **Financijski podsustav** → Glavna knjiga   
-- **Podsustav ljudskih resursa** → plaće, radna mjesta, obrazovanje  
-- **Logički podsustav** → planiranje materijala, nabava, transport, distribucija 
+
+| Podsustav | Opis |
+| ----- | ------- |
+| Podsustav proizvodnje | upravljanje i kontrola proizvodnje, praćenje radnih naloga, praćenje projekta, upravljanje kvalitetom    |
+| Financijski podsustav | Glavna knjiga  |
+| Podsustav ljudskih resursai | plaće, radna mjesta, obrazovanje  |
+| Logički podsustav | planiranje materijala, nabava, transport, distribucija   |
 
 ---
 
@@ -697,12 +700,15 @@ Stablo odlučivanja koristi se samo za vizualizaciju, a ne za prikazivanje skupa
 
 ## Pitanje 11  
 **Vanjski izvori podataka mogu se grupirati prema sadržaju. Upari sljedeće**  
-- **Psihometrijski podaci** → profiliranje kupaca, motivacije  
-- **Podaci o konkurentnosti** → proizvodi, usluge, promjene u konkurentskom okruženju  
-- **Strukovni podaci** → tehnološki trendovi, marketinški trendovi
-- **Robni podaci** → cijene sirovina, raspoloživost izvora sirovina  
-- **Ekonomski podaci** → prihodi pojedinih društvenih skupina, ponašanje potrošača  
-- **Opći ekonomski podaci** → fluktuacija tečajeva valuta, politički indikatori, kretanje kamata, burzovni podaci  
+| Izvor | Sadržaj |
+| ----- | ------- |
+| Psihometrijski podaci | profiliranje kupaca, motivacije  |
+| Podaci o konkurentnosti | proizvodi, usluge, promjene u konkurentskom okruženju  |
+| Strukovni podaci | tehnološki trendovi, marketinški trendovi  |
+| Robni podaci | cijene sirovina, raspoloživost izvora sirovina   |
+| Ekonomski podaci | prihodi pojedinih društvenih skupina, ponašanje potrošača    |
+| Opći ekonomski podaci | fluktuacija tečajeva valuta, politički indikatori, kretanje kamata, burzovni podaci   |
+
 
 ---
 

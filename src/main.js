@@ -68,7 +68,14 @@ const ACHIEVEMENTS = {
         return answer.isCorrect && (isLongQuestion || hasMultipleAnswers);
       });
     }
-  }
+  },
+  marathonComplete: {
+    id: 'marathonComplete',
+    title: 'ULTRA NIGHTMARE',
+    description: 'Completed the MARATHON MODE. You\'ve proven you can survive the onslaught of information systems!',
+    icon: 'fas fa-fire',
+    condition: (stats) => stats.marathonMode && stats.score > stats.totalQuestions * 0.6
+  },
 };
 
 // Game variables
@@ -91,7 +98,8 @@ let gameSettings = {
   timerSetting: 1200,
   soundEffects: true,
   backgroundMusic: true,
-  musicVolume: 20 // Default 20%
+  musicVolume: 20, // Default 20%
+  marathonMode: false
 };
 let questionTimer;
 let timers = [];
@@ -103,6 +111,7 @@ const startButton = document.getElementById('start-btn');
 const questionCountSelect = document.getElementById('question-count');
 const timerSettingSelect = document.getElementById('timer-setting');
 const soundToggle = document.getElementById('sound-toggle');
+const marathonModeCheckbox = document.getElementById('marathon-mode');
 const viewHighScoresButton = document.getElementById('view-high-scores');
 
 // Quiz screen
@@ -425,6 +434,86 @@ function setupEventListeners() {
       playSound(clickSound); // Provide feedback
     }
   });
+
+  // Handle marathon mode toggle
+  marathonModeCheckbox.addEventListener('change', function () {
+    if (this.checked) {
+      // Disable question count selector when marathon mode is active
+      questionCountSelect.disabled = true;
+      questionCountSelect.classList.add('disabled');
+
+      // Disable timer setting as well
+      timerSettingSelect.disabled = true;
+      timerSettingSelect.classList.add('disabled');
+
+      // Update timer setting label to show it's unlimited
+      const timerLabel = document.querySelector('label[for="timer-setting"]');
+      if (timerLabel) {
+        timerLabel.innerHTML = 'Time limit: <span class="unlimited-label">UNLIMITED</span>';
+      }
+
+      // Update game settings
+      gameSettings.marathonMode = true;
+      localStorage.setItem('quizGameSettings', JSON.stringify(gameSettings));
+
+      // Play click sound if enabled
+      if (gameSettings.soundEffects) {
+        playSound(clickSound);
+      }
+    } else {
+      // Re-enable question count selector
+      questionCountSelect.disabled = false;
+      questionCountSelect.classList.remove('disabled');
+
+      // Re-enable timer setting
+      timerSettingSelect.disabled = false;
+      timerSettingSelect.classList.remove('disabled');
+
+      // Restore timer setting label
+      const timerLabel = document.querySelector('label[for="timer-setting"]');
+      if (timerLabel) {
+        timerLabel.textContent = 'Time limit:';
+      }
+
+      // Update game settings
+      gameSettings.marathonMode = false;
+      localStorage.setItem('quizGameSettings', JSON.stringify(gameSettings));
+
+      // Play click sound if enabled
+      if (gameSettings.soundEffects) {
+        playSound(clickSound);
+      }
+    }
+  });
+
+  // Sound toggle button
+  soundToggleBtn.addEventListener('click', () => {
+    gameSettings.soundEffects = !gameSettings.soundEffects;
+    soundToggle.checked = gameSettings.soundEffects;
+    localStorage.setItem('quizGameSettings', JSON.stringify(gameSettings));
+    updateAudioControlsUI();
+    if (gameSettings.soundEffects) {
+      playSound(clickSound); // Provide feedback if just turned on
+    }
+  });
+
+  // Music volume slider
+  musicVolumeSlider.addEventListener('input', () => {
+    const volume = musicVolumeSlider.value;
+    setMusicVolume(volume);
+    updateVolumeSliderUI(volume);
+
+    // Try to start the music when slider is moved (user interaction)
+    if (backgroundMusic.paused && gameSettings.backgroundMusic) {
+      backgroundMusic.play().catch(err => {
+        console.log("Tried to play music when slider moved:", err);
+      });
+    }
+
+    if (gameSettings.soundEffects) {
+      playSound(clickSound); // Provide feedback
+    }
+  });
 }
 
 // Save and load game settings
@@ -433,6 +522,7 @@ function setGameSettings() {
   gameSettings.timerSetting = parseInt(timerSettingSelect.value);
   gameSettings.soundEffects = soundToggle.checked;
   gameSettings.backgroundMusic = true; // Always ensure music is enabled
+  gameSettings.marathonMode = marathonModeCheckbox.checked;
 
   localStorage.setItem('quizGameSettings', JSON.stringify(gameSettings));
 }
@@ -447,13 +537,36 @@ function loadGameSettings() {
       gameSettings.musicVolume = 20; // Default 20%
     }
 
+    // Handle missing marathon mode setting
+    if (gameSettings.marathonMode === undefined) {
+      gameSettings.marathonMode = false;
+    }
+
     // Always ensure background music is enabled
     gameSettings.backgroundMusic = true;
 
     // Apply saved settings to UI
     questionCountSelect.value = gameSettings.questionCount;
     timerSettingSelect.value = gameSettings.timerSetting;
+    marathonModeCheckbox.checked = gameSettings.marathonMode;
     soundToggle.checked = gameSettings.soundEffects;
+
+    // If marathon mode was previously enabled, update UI accordingly
+    if (gameSettings.marathonMode) {
+      // Disable question count selector
+      questionCountSelect.disabled = true;
+      questionCountSelect.classList.add('disabled');
+
+      // Disable timer setting
+      timerSettingSelect.disabled = true;
+      timerSettingSelect.classList.add('disabled');
+
+      // Update timer setting label
+      const timerLabel = document.querySelector('label[for="timer-setting"]');
+      if (timerLabel) {
+        timerLabel.innerHTML = 'Time limit: <span class="unlimited-label">UNLIMITED</span>';
+      }
+    }
 
     // Update volume slider
     musicVolumeSlider.value = gameSettings.musicVolume;
@@ -536,18 +649,35 @@ function startGame() {
 
   // Update UI with new settings
   scoreElement.textContent = '0';
-  updateTimerDisplay();
-  currentQuestionDisplay.textContent = '1';
-  totalQuestionsDisplay.textContent = gameSettings.questionCount;
 
   // Select and shuffle questions
   selectQuestions();
 
+  // Update the question number display
+  currentQuestionDisplay.textContent = '1';
+
+  // Handle marathon mode specific UI updates
+  if (gameSettings.marathonMode) {
+    // Update timer display to show "UNLIMITED"
+    timerElement.innerHTML = '<span class="infinity-symbol">∞</span> UNLIMITED';
+    timerElement.classList.add('unlimited-time');
+
+    // Update total questions display with the total question count
+    totalQuestionsDisplay.textContent = questions.length;
+  } else {
+    // Normal mode: update timer and use selected question count
+    updateTimerDisplay();
+    totalQuestionsDisplay.textContent = gameSettings.questionCount;
+    timerElement.classList.remove('unlimited-time');
+  }
+
   // Update progress bar
   updateProgress();
 
-  // Start timer
-  startTimer();
+  // Start timer only if not in marathon mode
+  if (!gameSettings.marathonMode) {
+    startTimer();
+  }
 
   // Show first question
   showQuestion();
@@ -560,8 +690,16 @@ function selectQuestions() {
   // Shuffle all questions
   const shuffledQuestions = [...allQuestions].sort(() => Math.random() - 0.5);
 
-  // Select based on question count setting
-  questions = shuffledQuestions.slice(0, gameSettings.questionCount);
+  // If marathon mode is enabled, use all questions
+  if (gameSettings.marathonMode) {
+    questions = shuffledQuestions;
+
+    // Update total questions display
+    totalQuestionsDisplay.textContent = questions.length;
+  } else {
+    // Select based on question count setting
+    questions = shuffledQuestions.slice(0, gameSettings.questionCount);
+  }
 }
 
 // Show the current question
@@ -799,9 +937,14 @@ function nextQuestion() {
       showFeedback(false);
     }
 
-    // Change button text
-    nextButton.textContent = currentQuestionIndex >= questions.length - 1 ? 'Complete Quest' : 'Next Challenge';
-    nextButton.innerHTML = currentQuestionIndex >= questions.length - 1 ?
+    // Change button text based on whether this is the last question
+    // In Marathon Mode, check against total questions length
+    // In Normal Mode, check against either the question count setting or the total number of questions, whichever is smaller
+    const isLastQuestion = gameSettings.marathonMode ?
+      currentQuestionIndex >= questions.length - 1 :
+      currentQuestionIndex >= Math.min(questions.length - 1, gameSettings.questionCount - 1);
+
+    nextButton.innerHTML = isLastQuestion ?
       `Complete Quest <i class="fas fa-flag-checkered"></i>` :
       `Next Challenge <i class="fas fa-arrow-right"></i>`;
 
@@ -811,7 +954,10 @@ function nextQuestion() {
   // Move to next question or end the game
   currentQuestionIndex++;
 
-  if (currentQuestionIndex < questions.length && currentQuestionIndex < gameSettings.questionCount) {
+  // In Marathon Mode, we continue until all questions are answered
+  // In Normal Mode, we end when we reach questionCount
+  if ((gameSettings.marathonMode && currentQuestionIndex < questions.length) ||
+    (!gameSettings.marathonMode && currentQuestionIndex < questions.length && currentQuestionIndex < gameSettings.questionCount)) {
     // Update progress
     updateProgress();
     currentQuestionDisplay.textContent = currentQuestionIndex + 1;
@@ -905,7 +1051,9 @@ function showFeedback(isCorrect) {
 
 // Update the progress bar
 function updateProgress() {
-  const progressPercentage = (currentQuestionIndex / gameSettings.questionCount) * 100;
+  // Use total questions length in Marathon Mode, otherwise use the selected question count
+  const totalQuestionsForProgress = gameSettings.marathonMode ? questions.length : gameSettings.questionCount;
+  const progressPercentage = (currentQuestionIndex / totalQuestionsForProgress) * 100;
   progressBar.style.width = `${progressPercentage}%`;
 }
 
@@ -915,17 +1063,21 @@ function startTimer() {
   timers.forEach(clearInterval);
   timers = [];
 
-  const timerInterval = setInterval(() => {
-    if (timeLeft > 0) {
-      timeLeft--;
-      updateTimerDisplay();
-    } else {
-      clearInterval(timerInterval);
-      endGame();
-    }
-  }, 1000);
+  // Only start the timer if we're not in Marathon Mode
+  // (This is a safety check - the timer isn't even called in Marathon Mode)
+  if (!gameSettings.marathonMode) {
+    const timerInterval = setInterval(() => {
+      if (timeLeft > 0) {
+        timeLeft--;
+        updateTimerDisplay();
+      } else {
+        clearInterval(timerInterval);
+        endGame();
+      }
+    }, 1000);
 
-  timers.push(timerInterval);
+    timers.push(timerInterval);
+  }
 
   // Animate timer bar
   timerBar.style.transition = 'width 1s linear';
@@ -962,29 +1114,48 @@ function endGame() {
   timers.forEach(clearInterval);
   timers = [];
 
-  // Calculate statistics
-  const timeUsed = totalTime - timeLeft;
-  const timeUsedPercentage = (timeUsed / totalTime) * 100;
-  const accuracy = (score / gameSettings.questionCount) * 100;
+  // Use the actual question count for calculations, which may differ in Marathon Mode
+  const totalQuestionCount = gameSettings.marathonMode ? questions.length : gameSettings.questionCount;
+  const accuracy = (score / totalQuestionCount) * 100;
 
-  // Format time for display
-  const minutes = Math.floor(timeUsed / 60);
-  const seconds = timeUsed % 60;
-  const formattedTime = `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
+  // Calculate time statistics
+  let timeUsed = 0;
+  let timeUsedPercentage = 0;
+  let formattedTime = '';
+
+  if (gameSettings.marathonMode) {
+    // In Marathon Mode, time is unlimited 
+    formattedTime = 'UNLIMITED';
+  } else {
+    // Normal mode with timer
+    timeUsed = totalTime - timeLeft;
+    timeUsedPercentage = (timeUsed / totalTime) * 100;
+
+    // Format time for display
+    const minutes = Math.floor(timeUsed / 60);
+    const seconds = timeUsed % 60;
+    formattedTime = `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
+  }
 
   // Update results screen
-  finalScoreDisplay.textContent = `${score}/${gameSettings.questionCount}`;
+  finalScoreDisplay.textContent = `${score}/${totalQuestionCount}`;
   timeTakenDisplay.textContent = formattedTime;
   accuracyDisplay.textContent = `${Math.round(accuracy)}%`;
+
+  // Add Marathon Mode indicator if applicable
+  if (gameSettings.marathonMode) {
+    finalScoreDisplay.innerHTML += ' <span class="marathon-badge"><i class="fas fa-fire"></i> MARATHON</span>';
+  }
 
   // Check achievements
   const gameStats = {
     score,
-    totalQuestions: gameSettings.questionCount,
+    totalQuestions: totalQuestionCount,
     accuracy,
     timeUsed,
     timeUsedPercentage,
     maxStreak,
+    marathonMode: gameSettings.marathonMode,
     fastestAnswer,
     hadComeback
   };

@@ -46,6 +46,7 @@
     --doom-green: #00ff00;
     --doom-blue: #0066ff;
     --doom-yellow: #ffcc00;
+    --doom-orange: #ff6600;
 
     /* Improved text colors for readability */
     --text-primary: #ffffff;
@@ -205,6 +206,13 @@ h1 i {
     outline: none;
     border-color: var(--doom-yellow);
     box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+}
+
+.custom-select.disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    border-color: var(--doom-gray);
+    background-image: linear-gradient(to bottom, rgba(51, 51, 51, 0.9), rgba(68, 68, 68, 0.9));
 }
 
 /* Toggle Switch */
@@ -697,18 +705,18 @@ label,
     box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
 }
 
-#feedback-container.incorrect {
-    background-color: rgba(100, 0, 0, 0.7);
-    border-color: #ff4d4d;
-    box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
-}
-
 /* Correct answer DOOM style */
 #feedback-container.correct {
     background-color: rgba(0, 80, 0, 0.3);
     border-color: #00ff00;
     box-shadow: 0 0 15px rgba(0, 255, 0, 0.3), inset 0 0 20px rgba(0, 255, 0, 0.1);
     animation: doom-correct 0.5s ease-out;
+}
+
+#feedback-container.incorrect {
+    background-color: rgba(100, 0, 0, 0.7);
+    border-color: #ff4d4d;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
 }
 
 /* DOOM style death animation for wrong answers */
@@ -1799,4 +1807,184 @@ label:hover {
 .quiz-progress {
     font-family: 'EternalBattleBold' !important;
     width: 100%;
+}
+
+/* Marathon Mode Styling */
+.marathon-option {
+    margin: 15px 0;
+    display: flex;
+    align-items: center;
+}
+
+.custom-checkbox {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkbox-label {
+    position: relative;
+    padding-left: 35px;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--doom-yellow);
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.8);
+    transition: all 0.3s;
+}
+
+.checkbox-label:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 25px;
+    height: 25px;
+    border: 2px solid var(--doom-yellow);
+    background: rgba(0, 0, 0, 0.5);
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.checkbox-label:after {
+    content: '✓';
+    position: absolute;
+    left: 7px;
+    top: 2px;
+    color: var(--doom-orange);
+    font-size: 20px;
+    font-weight: bold;
+    opacity: 0;
+    transition: all 0.2s;
+    text-shadow: 0 0 8px var(--doom-orange);
+}
+
+.custom-checkbox:checked~.checkbox-label:after {
+    opacity: 1;
+}
+
+.custom-checkbox:checked~.checkbox-label {
+    color: var(--doom-orange);
+    text-shadow: 0 0 5px var(--doom-orange);
+}
+
+.checkbox-label .tooltip {
+    visibility: hidden;
+    width: 250px;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: var(--doom-light-gray);
+    text-align: center;
+    border: 2px solid var(--doom-dark-red);
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -125px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-size: 14px;
+    font-weight: normal;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+}
+
+.checkbox-label .tooltip::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: var(--doom-dark-red) transparent transparent transparent;
+}
+
+.checkbox-label:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
+.marathon-option .fa-fire {
+    color: var(--doom-orange);
+    text-shadow: 0 0 5px var(--doom-orange);
+    margin-right: 5px;
+}
+
+/* Make the timer dropdown a bit wider for Marathon Mode */
+#timer-setting {
+    min-width: 150px;
+}
+
+/* Marathon Badge Styling */
+.marathon-badge {
+    display: inline-block;
+    background-color: var(--doom-orange);
+    color: var(--doom-black);
+    font-size: 0.8em;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-left: 10px;
+    vertical-align: middle;
+    font-weight: bold;
+    box-shadow: 0 0 10px rgba(255, 102, 0, 0.7);
+    animation: pulse 1.5s infinite;
+    text-shadow: none;
+}
+
+.marathon-badge .fa-fire {
+    margin-right: 4px;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 5px rgba(255, 102, 0, 0.7);
+    }
+
+    50% {
+        box-shadow: 0 0 15px rgba(255, 102, 0, 0.9);
+    }
+
+    100% {
+        box-shadow: 0 0 5px rgba(255, 102, 0, 0.7);
+    }
+}
+
+/* Unlimited Time Display */
+.unlimited-time {
+    color: var(--doom-orange) !important;
+    text-shadow: 0 0 10px var(--doom-orange);
+    animation: pulse-orange 2s infinite;
+}
+
+.infinity-symbol {
+    font-size: 1.3em;
+    display: inline-block;
+    margin-right: 6px;
+    font-weight: bold;
+    vertical-align: middle;
+}
+
+@keyframes pulse-orange {
+    0% {
+        text-shadow: 0 0 5px var(--doom-orange);
+    }
+
+    50% {
+        text-shadow: 0 0 15px var(--doom-orange);
+    }
+
+    100% {
+        text-shadow: 0 0 5px var(--doom-orange);
+    }
+}
+
+.unlimited-label {
+    color: var(--doom-orange);
+    font-weight: bold;
+    text-shadow: 0 0 5px var(--doom-orange);
+    margin-left: 5px;
+    display: inline-block;
 }
