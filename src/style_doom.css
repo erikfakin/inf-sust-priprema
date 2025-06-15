@@ -1,0 +1,1801 @@
+/* DOOM-inspired CSS for Quiz App */
+
+/* Font Declarations */
+@font-face {
+    font-family: 'EternalBattleBold';
+    src: url('/fonts/EternalBattleBold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Arvo';
+    src: url('/fonts/Arvo-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Arvo';
+    src: url('/fonts/Arvo-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Arvo';
+    src: url('/fonts/Arvo-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Arvo';
+    src: url('/fonts/Arvo-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+
+:root {
+    --doom-red: #ff0000;
+    --doom-dark-red: #800000;
+    --doom-lighter-red: #ff3333;
+    --doom-black: #000000;
+    --doom-gray: #333333;
+    --doom-light-gray: #bbbbbb;
+    --doom-green: #00ff00;
+    --doom-blue: #0066ff;
+    --doom-yellow: #ffcc00;
+
+    /* Improved text colors for readability */
+    --text-primary: #ffffff;
+    --text-secondary: #dddddd;
+    --text-accent: #ff3333;
+}
+
+body {
+    background-color: #121212;
+    background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79 4 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5z' fill='%23300000' fill-opacity='0.15' fill-rule='evenodd'/%3E%3C/svg%3E");
+    color: var(--text-primary);
+    font-family: 'Arvo', serif;
+    position: relative;
+    overflow-x: hidden;
+    line-height: 1.6;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    padding: 0;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+/* CRT effects removed for better readability */
+
+/* Removed CRT flicker animation */
+
+/* Film grain effect removed for better readability */
+
+/* Main Container */
+#app-container {
+    max-width: 900px;
+    margin: 0 auto;
+    box-shadow: 0 0 30px rgba(255, 0, 0, 0.3);
+    position: relative;
+    width: 100%;
+    padding-top: 30px;
+    /* Make room for controls at the top */
+}
+
+/* Screen Styling */
+.screen {
+    background: linear-gradient(135deg, #220808, #0a0a0a);
+    border: 2px solid var(--doom-red);
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.3), inset 0 0 20px rgba(255, 0, 0, 0.1);
+    padding: 2.2rem;
+    position: relative;
+    clip-path: polygon(0 0,
+            calc(100% - 15px) 0,
+            100% 15px,
+            100% 100%,
+            15px 100%,
+            0 calc(100% - 15px));
+}
+
+/* Screen Visibility */
+.screen {
+    display: none !important;
+    margin: 2rem auto;
+    max-width: 800px;
+    opacity: 0;
+}
+
+.screen.active {
+    display: block !important;
+    opacity: 1;
+    animation: screenFadeIn 0.4s ease-out;
+}
+
+@keyframes screenFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Headers */
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'EternalBattleBold', 'EternalBattleBold', sans-serif;
+    text-transform: uppercase;
+    color: var(--doom-lighter-red);
+    text-shadow: 0 0 8px rgba(255, 0, 0, 0.4);
+    letter-spacing: 1.5px;
+    line-height: 1.4;
+    margin-bottom: 1rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    position: relative;
+}
+
+h1 i {
+    margin-right: 10px;
+}
+
+/* Tagline */
+.tagline {
+    color: var(--doom-light-gray);
+    text-align: center;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Settings Container */
+.settings-container {
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 1px solid var(--doom-dark-red);
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.setting-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.setting-group label {
+    color: var(--doom-red);
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Custom Select Styling */
+.custom-select {
+    background-color: var(--doom-black);
+    color: var(--doom-light-gray);
+    border: 1px solid var(--doom-red);
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    width: 150px;
+    font-family: 'Arvo', sans-serif;
+}
+
+.custom-select:focus {
+    outline: none;
+    border-color: var(--doom-yellow);
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+}
+
+/* Toggle Switch */
+.toggle-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.toggle-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--doom-gray);
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+}
+
+input:checked+.slider {
+    background-color: var(--doom-red);
+}
+
+input:checked+.slider:before {
+    transform: translateX(26px);
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+
+
+/* Button hover state with DOOM-style glow */
+.btn:hover,
+.btn:focus {
+    background: var(--doom-red);
+    color: #fff;
+    box-shadow: 0 4px 0 var(--doom-dark-red),
+        0 0 20px rgba(255, 0, 0, 0.5),
+        0 0 30px rgba(255, 0, 0, 0.3),
+        inset 0 0 10px rgba(255, 255, 255, 0.5);
+    transform: translateY(-2px);
+    text-shadow: 0 0 8px #fff;
+}
+
+/* Button press effect - DOOM style */
+.btn:active {
+    transform: translateY(2px);
+    box-shadow: 0 2px 0 var(--doom-darker-red),
+        0 0 10px rgba(255, 0, 0, 0.5),
+        inset 0 0 5px rgba(255, 0, 0, 0.7);
+}
+
+.btn::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom,
+            rgba(255, 255, 255, 0.1) 0%,
+            rgba(255, 255, 255, 0) 60%);
+    pointer-events: none;
+}
+
+.btn i {
+    font-size: 1.1rem;
+    filter: drop-shadow(0 0 3px rgba(255, 0, 0, 0.7));
+}
+
+.primary-btn {
+    background: linear-gradient(135deg, var(--doom-red), var(--doom-dark-red));
+    border-width: 2px;
+    color: #fff;
+}
+
+.secondary-btn {
+    background: transparent;
+    border: 1px solid var(--doom-red);
+    color: var(--doom-red);
+    box-shadow: 0 3px 0 var(--doom-darker-red),
+        0 0 10px rgba(255, 0, 0, 0.2);
+}
+
+.btn:disabled {
+    background: #222;
+    border-color: #444;
+    color: #666;
+    cursor: not-allowed;
+    text-shadow: none;
+    box-shadow: none;
+    clip-path: none;
+}
+
+/* Button Pulse Animation */
+.pulse {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.7);
+    }
+
+    70% {
+        box-shadow: 0 0 0 10px rgba(255, 0, 0, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(255, 0, 0, 0);
+    }
+}
+
+/* High Scores Link */
+.high-scores-link {
+    margin-top: 1.5rem;
+    text-align: center;
+}
+
+.high-scores-link a {
+    color: var(--doom-light-gray);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: color 0.2s;
+}
+
+.high-scores-link a:hover {
+    color: var(--doom-red);
+    text-shadow: 0 0 5px var(--doom-red);
+}
+
+/* Quiz Screen */
+.quiz-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.quiz-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+#category-badge {
+    background: linear-gradient(135deg, #600, #300);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 0;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    border: 1px solid var(--doom-red);
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
+}
+
+#progress-bar-container {
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 15px;
+    width: 100%;
+    margin-bottom: 0.5rem;
+    border: 1px solid var(--doom-dark-red);
+}
+
+#progress-bar {
+    height: 100%;
+    background-color: var(--doom-red);
+    width: 0;
+    transition: width 0.3s ease;
+}
+
+#question-counter {
+    color: var(--doom-light-gray);
+    font-size: 0.9rem;
+    font-family: 'EternalBattleBold', 'Arvo', sans-serif;
+}
+
+/* Timer as DOOM Health Bar */
+#timer-container {
+    background-color: rgba(0, 0, 0, 0.7);
+    height: 40px;
+    position: relative;
+    margin-bottom: 1.5rem;
+    border: 3px solid #000;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.8);
+    clip-path: polygon(0 0,
+            calc(100% - 10px) 0,
+            100% 10px,
+            100% 100%,
+            10px 100%,
+            0 calc(100% - 10px));
+}
+
+#timer-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(45deg,
+            rgba(0, 0, 0, 0.2),
+            rgba(0, 0, 0, 0.2) 10px,
+            rgba(0, 0, 0, 0.3) 10px,
+            rgba(0, 0, 0, 0.3) 20px);
+    z-index: 0;
+}
+
+#timer-bar {
+    position: absolute;
+    height: 100%;
+    background-color: var(--doom-health-100);
+    width: 100%;
+    transition: width 0.5s linear, background-color 0.5s ease;
+    z-index: 1;
+}
+
+/* DOOM health bar color changes based on time left */
+#timer-bar[data-health="75"] {
+    background-color: var(--doom-health-75);
+}
+
+#timer-bar[data-health="50"] {
+    background-color: var(--doom-health-50);
+}
+
+#timer-bar[data-health="25"] {
+    background-color: var(--doom-health-25);
+    animation: pulse-low-health 1s infinite;
+}
+
+@keyframes pulse-low-health {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.7;
+    }
+}
+
+#timer {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    color: white;
+    font-family: 'EternalBattleBold', 'Arvo', sans-serif;
+    font-weight: bold;
+    text-shadow: 2px 2px 0 #000;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Question Container */
+#question-container {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid var(--doom-dark-red);
+}
+
+#question-number {
+    color: var(--doom-light-gray);
+    font-family: 'EternalBattleBold', 'Arvo', sans-serif;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+#question {
+    margin-top: 0.5rem;
+    margin-bottom: 1.5rem;
+    color: white;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+/* Improved Text Readability */
+p,
+li,
+label,
+.answer-option label,
+#question {
+    font-family: 'Arvo', sans-serif;
+    letter-spacing: 0.3px;
+    line-height: 1.6;
+    font-weight: 400;
+}
+
+/* Question text specific improvements */
+#question {
+    font-size: 1.4rem;
+    margin-bottom: 1.8rem;
+    color: #ffffff;
+    font-weight: 500;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+    line-height: 1.7;
+    padding: 0.5rem;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-left: 3px solid var(--doom-red);
+}
+
+/* Answer options improvements */
+.answer-option {
+    background-color: rgba(20, 20, 20, 0.8);
+    border: 1px solid var(--doom-dark-red);
+    margin-bottom: 1rem !important;
+    padding: 1rem 1.2rem !important;
+    transition: all 0.2s ease;
+    box-sizing: border-box;
+    outline-offset: -1px;
+}
+
+.answer-option:hover {
+    transform: translateX(5px);
+    outline: 1px solid var(--doom-red);
+    border-color: transparent;
+}
+
+.answer-option label {
+    font-size: 1.1rem;
+    color: #ffffff;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+}
+
+/* Make the category badge more readable */
+#category-badge {
+    background-color: rgba(128, 0, 0, 0.7) !important;
+    color: white !important;
+    font-weight: 500;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
+}
+
+/* Answer Buttons */
+.btn-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+    margin-top: 1.5rem;
+}
+
+.answer-option {
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 1px solid var(--doom-gray);
+    padding: 0.8rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: all 0.2s;
+}
+
+.answer-option:hover {
+    background-color: rgba(80, 0, 0, 0.3);
+    border-color: var(--doom-red);
+}
+
+.answer-option.selected {
+    outline: 2px solid var(--doom-red);
+    background-color: rgba(80, 0, 0, 0.5);
+}
+
+.answer-option.correct {
+    outline: 3px solid #4dff4d !important;
+    background-color: rgba(0, 80, 0, 0.6) !important;
+    position: relative;
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.4) !important;
+}
+
+.answer-option.correct::after {
+    content: "✓";
+    color: #4dff4d;
+    font-size: 1.5rem;
+    font-weight: bold;
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    text-shadow: 0 0 8px rgba(0, 255, 0, 0.7);
+}
+
+.answer-option.correct label {
+    color: #4dff4d !important;
+    text-shadow: 0 0 2px rgba(0, 255, 0, 0.5);
+}
+
+.answer-option.incorrect {
+    outline: 3px solid #ff4d4d !important;
+    background-color: rgba(100, 0, 0, 0.6) !important;
+    position: relative;
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.4) !important;
+}
+
+.answer-option.incorrect::after {
+    content: "✗";
+    color: #ff4d4d;
+    font-size: 1.5rem;
+    font-weight: bold;
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    text-shadow: 0 0 8px rgba(255, 0, 0, 0.7);
+}
+
+.answer-option.incorrect label {
+    text-decoration: line-through;
+    opacity: 0.8;
+}
+
+.answer-option input {
+    margin-right: 10px;
+}
+
+.answer-option label {
+    flex-grow: 1;
+    cursor: pointer;
+    color: white;
+}
+
+/* Feedback Container */
+#feedback-container {
+    padding: 1.2rem;
+    margin-bottom: 1.5rem;
+    border: 3px solid;
+    display: none;
+    position: relative;
+    clip-path: polygon(0 0,
+            calc(100% - 10px) 0,
+            100% 10px,
+            100% 100%,
+            10px 100%,
+            0 calc(100% - 10px));
+    font-family: 'EternalBattleBold', 'Arvo', sans-serif;
+    font-size: 1.3rem;
+    letter-spacing: 1px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+#feedback-container.correct {
+    background-color: rgba(0, 80, 0, 0.7);
+    border-color: #4dff4d;
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
+}
+
+#feedback-container.incorrect {
+    background-color: rgba(100, 0, 0, 0.7);
+    border-color: #ff4d4d;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+}
+
+/* Correct answer DOOM style */
+#feedback-container.correct {
+    background-color: rgba(0, 80, 0, 0.3);
+    border-color: #00ff00;
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.3), inset 0 0 20px rgba(0, 255, 0, 0.1);
+    animation: doom-correct 0.5s ease-out;
+}
+
+/* DOOM style death animation for wrong answers */
+#feedback-container.incorrect {
+    background-color: rgba(80, 0, 0, 0.3);
+    border-color: var(--doom-red);
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.3), inset 0 0 20px rgba(255, 0, 0, 0.1);
+    animation: doom-incorrect 0.6s ease-out;
+}
+
+@keyframes doom-correct {
+    0% {
+        transform: scale(0.95);
+        opacity: 0;
+    }
+
+    50% {
+        transform: scale(1.02);
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes doom-incorrect {
+    0% {
+        transform: translateX(-5px);
+    }
+
+    20% {
+        transform: translateX(5px);
+    }
+
+    40% {
+        transform: translateX(-7px);
+    }
+
+    60% {
+        transform: translateX(7px);
+    }
+
+    80% {
+        transform: translateX(-5px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+#feedback-icon {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+#feedback-container.correct #feedback-icon::before {
+    content: "🔥";
+    /* Kill confirmed icon */
+}
+
+#feedback-container.incorrect #feedback-icon::before {
+    content: "💀";
+    /* Death icon */
+}
+
+#feedback-text {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+    font-family: 'EternalBattleBold', 'Arvo', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+}
+
+#feedback-container.correct #feedback-text {
+    color: #4dff4d;
+    text-shadow: 0 0 6px rgba(0, 255, 0, 0.4);
+}
+
+#feedback-container.incorrect #feedback-text {
+    color: #ff4d4d;
+    text-shadow: 0 0 6px rgba(255, 0, 0, 0.4);
+}
+
+#correct-answer {
+    font-size: 1rem;
+    color: white;
+    padding-top: 0.7rem;
+    margin-top: 0.7rem;
+    line-height: 1.5;
+    font-weight: 400;
+}
+
+.explanation {
+    margin-top: 1rem;
+    padding: 1rem;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-left: 3px solid rgba(255, 120, 120, 0.6);
+    color: #dddddd;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    border-left: 3px solid #3498db;
+    color: #ddd;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* Controls */
+#controls {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 1.5rem;
+}
+
+/* Score Container */
+#score-container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.score-box {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 0.5rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid var(--doom-red);
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
+    font-family: 'EternalBattleBold', 'Arvo', sans-serif;
+    color: var(--doom-red);
+    font-size: 1.2rem;
+}
+
+/* Results Screen */
+#results-title {
+    font-size: 2.5rem;
+    color: var(--doom-red);
+    text-align: center;
+    text-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+    animation: glow 1.5s infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+    }
+
+    to {
+        text-shadow: 0 0 20px rgba(255, 0, 0, 0.8);
+    }
+}
+
+#results-summary {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin: 2rem 0;
+    flex-wrap: wrap;
+}
+
+/* Enhanced result stats */
+.result-stat {
+    background: linear-gradient(135deg, #250000, #000);
+    padding: 1.5rem;
+    border: 2px solid var(--doom-dark-red);
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.2);
+    flex: 1;
+    min-width: 150px;
+    max-width: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    clip-path: polygon(0 10%, 10% 0,
+            90% 0, 100% 10%,
+            100% 90%, 90% 100%,
+            10% 100%, 0 90%);
+}
+
+.result-stat i {
+    color: var(--doom-red);
+    font-size: 2rem;
+    margin-bottom: 0.8rem;
+    animation: pulse 2s infinite;
+    filter: drop-shadow(0 0 5px rgba(255, 0, 0, 0.7));
+}
+
+.stat-label {
+    font-family: 'EternalBattleBold', 'Arvo', sans-serif;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-bottom: 0.3rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.stat-value {
+    font-family: 'EternalBattleBold', 'Arvo', sans-serif;
+    color: white;
+    font-size: 1.5rem;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+/* Review Screen */
+.review-list {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 1rem;
+    border: 1px solid var(--doom-dark-red);
+    margin: 1.5rem 0;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.review-list>div {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-left: 5px solid;
+}
+
+.review-list>div.correct {
+    background-color: rgba(0, 80, 0, 0.2);
+    border-color: #00ff00;
+}
+
+.review-list>div.incorrect {
+    background-color: rgba(80, 0, 0, 0.2);
+    border-color: var(--doom-red);
+}
+
+.review-list .correct {
+    color: #00ff00;
+}
+
+.review-list .incorrect {
+    color: var(--doom-red);
+}
+
+/* High Scores Screen */
+#high-scores-list {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 1rem;
+    margin: 1.5rem 0;
+    border: 1px solid var(--doom-dark-red);
+}
+
+.high-score-item {
+    display: flex;
+    align-items: center;
+    padding: 0.8rem;
+    margin-bottom: 0.8rem;
+    background-color: rgba(30, 30, 30, 0.5);
+    border-left: 3px solid var(--doom-red);
+}
+
+.high-score-rank {
+    font-size: 1.5rem;
+    margin-right: 1rem;
+    color: var(--doom-red);
+    font-family: 'EternalBattleBold', 'Arvo', sans-serif;
+    min-width: 40px;
+    text-align: center;
+}
+
+.high-score-info {
+    flex-grow: 1;
+}
+
+.high-score-name {
+    font-weight: bold;
+    color: white;
+}
+
+.high-score-date {
+    font-size: 0.8rem;
+    color: var(--doom-light-gray);
+}
+
+.high-score-value {
+    font-size: 1.2rem;
+    color: var(--doom-red);
+    font-family: 'EternalBattleBold', 'Arvo', sans-serif;
+}
+
+.no-scores-message {
+    text-align: center;
+    padding: 2rem 0;
+    color: var(--doom-light-gray);
+    font-style: italic;
+}
+
+/* Modal */
+#save-score-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: linear-gradient(135deg, #1c0000, #000000);
+    padding: 2.5rem;
+    max-width: 90%;
+    width: 500px;
+    border: 3px solid var(--doom-red);
+    box-shadow: 0 0 40px rgba(255, 0, 0, 0.4);
+    text-align: center;
+    position: relative;
+    clip-path: polygon(0 10px, 10px 0,
+            calc(100% - 10px) 0, 100% 10px,
+            100% calc(100% - 10px), calc(100% - 10px) 100%,
+            10px 100%, 0 calc(100% - 10px));
+    animation: modalAppear 0.3s ease-out forwards;
+    transform: scale(0.9);
+    opacity: 0;
+}
+
+@keyframes modalAppear {
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.modal-title {
+    color: var(--doom-red);
+    font-family: 'EternalBattleBold', 'Arvo', sans-serif;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+}
+
+/* DOOM-themed Input Styling */
+input[type="text"],
+.modal-input,
+#user-answer {
+    width: 100%;
+    padding: 1rem 1.2rem;
+    margin: 1rem 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 2px solid var(--doom-dark-red);
+    color: var(--doom-light-gray);
+    font-size: 1.1rem;
+    font-family: 'Arvo', sans-serif;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+    clip-path: polygon(0 10px, 10px 0,
+            calc(100% - 10px) 0, 100% 10px,
+            100% calc(100% - 10px), calc(100% - 10px) 100%,
+            10px 100%, 0 calc(100% - 10px));
+}
+
+input[type="text"]:hover,
+.modal-input:hover,
+#user-answer:hover {
+    border-color: var(--doom-red);
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.3);
+}
+
+input[type="text"]:focus,
+.modal-input:focus,
+#user-answer:focus {
+    outline: none;
+    border-color: var(--doom-red);
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.5) inset, 0 0 15px rgba(255, 0, 0, 0.4);
+    color: white;
+    background-color: rgba(40, 0, 0, 0.7);
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1.5rem;
+}
+
+/* Fill-in-the-blank answer input styling */
+#user-answer {
+    background-color: rgba(30, 0, 0, 0.7);
+    border: 2px solid var(--doom-dark-red);
+    margin: 2rem 0;
+    padding: 1.2rem 1.5rem;
+    font-size: 1.2rem;
+    text-align: center;
+    letter-spacing: 1px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5) inset, 0 5px 10px rgba(0, 0, 0, 0.2);
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+#user-answer::placeholder {
+    color: rgba(255, 255, 255, 0.3);
+    font-style: italic;
+    text-transform: uppercase;
+    font-size: 1rem;
+}
+
+#user-answer:focus::placeholder {
+    opacity: 0.5;
+}
+
+/* Style when correct answer is given */
+#user-answer.correct {
+    border-color: #4dff4d;
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.3);
+    background-color: rgba(0, 40, 0, 0.4);
+}
+
+/* Style when incorrect answer is given */
+#user-answer.incorrect {
+    border-color: #ff4d4d;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
+    background-color: rgba(40, 0, 0, 0.4);
+}
+
+/* DOOM-styled input container with icon */
+.doom-input-container {
+    position: relative;
+    margin: 1.5rem 0;
+}
+
+.input-icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--doom-red);
+    font-size: 1.3rem;
+    z-index: 2;
+    filter: drop-shadow(0 0 5px rgba(255, 0, 0, 0.5));
+}
+
+.doom-input-container .modal-input {
+    padding-left: 45px;
+    text-align: left;
+    background-color: rgba(20, 0, 0, 0.8);
+    letter-spacing: 1px;
+}
+
+.doom-input-container .modal-input::placeholder {
+    color: rgba(255, 0, 0, 0.5);
+    font-family: 'EternalBattleBold', 'Arvo', sans-serif;
+    font-size: 0.9rem;
+}
+
+.modal-buttons .btn {
+    min-width: 150px;
+}
+
+/* Media Queries */
+@media (max-width: 767px) {
+    .results-summary {
+        flex-direction: column;
+    }
+
+    .modal-content {
+        width: 90%;
+    }
+
+    #question-container,
+    .settings-container {
+        padding: 1rem;
+    }
+
+    #question {
+        font-size: 1.2rem;
+    }
+}
+
+/* Film Grain Effect */
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    pointer-events: none;
+    opacity: 0.05;
+    z-index: 999;
+}
+
+/* CRT Effect */
+.screen::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom,
+            rgba(255, 0, 0, 0.03) 0%,
+            rgba(255, 0, 0, 0.01) 100%);
+    background-size: 100% 2px;
+    pointer-events: none;
+    z-index: 1000;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #000000;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--doom-red);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--doom-dark-red);
+}
+
+/* Health Bar Style for Progress */
+.health-bar {
+    background: linear-gradient(90deg, #ff0000, #ff4d00, #ff0000);
+    background-size: 200% 100%;
+    animation: healthPulse 2s infinite;
+}
+
+@keyframes healthPulse {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Achievements Styling */
+#achievement-container {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 2px solid var(--doom-red);
+    clip-path: polygon(0 0,
+            calc(100% - 15px) 0,
+            100% 15px,
+            100% 100%,
+            15px 100%,
+            0 calc(100% - 15px));
+}
+
+#achievement-container h3 {
+    font-family: 'EternalBattleBold', 'Arvo', sans-serif;
+    color: var(--doom-red);
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px rgba(255, 0, 0, 0.7);
+    font-size: 1.7rem;
+}
+
+#achievements-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.achievement-header {
+    font-family: 'EternalBattleBold', 'Arvo', sans-serif;
+    color: var(--doom-red);
+    font-size: 1.2rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 0 0 5px rgba(255, 0, 0, 0.7);
+}
+
+.achievement-counter {
+    background: linear-gradient(135deg, var(--doom-dark-red), #400);
+    padding: 1rem;
+    margin: 1rem 0 2rem;
+    text-align: center;
+    font-family: 'EternalBattleBold', 'Arvo', sans-serif;
+    color: #fff;
+    font-size: 1.3rem;
+    border: 2px solid var(--doom-red);
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.4);
+    text-shadow: 0 0 8px rgba(255, 0, 0, 0.8);
+    animation: pulse 2s infinite;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.achievement.doom-achievement {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: rgba(20, 20, 20, 0.9);
+    padding: 1rem;
+    border-left: 4px solid var(--doom-red);
+    margin-bottom: 0.5rem;
+    animation: achievementAppear 0.5s forwards;
+    transform: translateX(-100px);
+    opacity: 0;
+}
+
+@keyframes achievementAppear {
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.achievement-icon {
+    background: linear-gradient(135deg, var(--doom-red), var(--doom-dark-red));
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0;
+    flex-shrink: 0;
+    clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+}
+
+.achievement-icon i {
+    color: white;
+    font-size: 1.5rem;
+    filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.5));
+}
+
+.achievement-info {
+    flex-grow: 1;
+}
+
+.achievement-title {
+    font-family: 'EternalBattleBold', 'Arvo', sans-serif;
+    font-size: 1.2rem;
+    color: var(--doom-red);
+    margin-bottom: 0.3rem;
+    letter-spacing: 1px;
+}
+
+.achievement-desc {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.4;
+}
+
+.no-achievements.doom-failure {
+    background: rgba(50, 0, 0, 0.7);
+    padding: 1.5rem;
+    text-align: center;
+    font-family: 'EternalBattleBold', 'Arvo', sans-serif;
+    color: var(--doom-red);
+    font-size: 1.4rem;
+    border: 1px solid var(--doom-dark-red);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    animation: pulse 2s infinite;
+}
+
+.doom-subtitle {
+    font-size: 0.9rem;
+    color: #999;
+    display: block;
+    margin-top: 0.5rem;
+    text-transform: none;
+    letter-spacing: 1px;
+}
+
+/* Fill-in-the-blank specific styling */
+.fill-blank-container {
+    margin: 2rem auto;
+    max-width: 90%;
+}
+
+.fill-blank-container .input-icon {
+    left: 20px;
+    font-size: 1.4rem;
+    animation: pulse 2s infinite;
+}
+
+.fill-blank-container #user-answer {
+    padding-left: 55px;
+    height: 60px;
+    font-size: 1.2rem;
+    background: linear-gradient(90deg, rgba(50, 0, 0, 0.7), rgba(0, 0, 0, 0.8));
+}
+
+/* Sound settings layout */
+.sound-settings {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    justify-content: center;
+}
+
+/* Persistent Audio Controls */
+#audio-controls {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    z-index: 1000;
+    display: flex;
+    gap: 10px;
+}
+
+.audio-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 0;
+    background: rgba(0, 0, 0, 0.7);
+    border: 2px solid var(--doom-dark-red);
+    color: var(--doom-red);
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    clip-path: polygon(0 25%, 25% 0,
+            75% 0, 100% 25%,
+            100% 75%, 75% 100%,
+            25% 100%, 0 75%);
+}
+
+.audio-btn:hover {
+    background-color: rgba(50, 0, 0, 0.7);
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.4);
+    transform: scale(1.05);
+}
+
+.audio-btn.active {
+    background: linear-gradient(135deg, var(--doom-red), var(--doom-dark-red));
+    color: white;
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.4);
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
+}
+
+.audio-btn.muted {
+    background: rgba(50, 50, 50, 1);
+    color: #666;
+    border-color: #444;
+}
+
+/* Music volume slider */
+.music-control-group {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-left: 10px;
+    background: rgba(0, 0, 0, 0.2);
+    border: 2px solid var(--doom-dark-red);
+    padding: 0 10px;
+    clip-path: polygon(0 10px, 10px 0,
+            calc(100% - 10px) 0, 100% 10px,
+            100% calc(100% - 10px), calc(100% - 10px) 100%,
+            10px 100%, 0 calc(100% - 10px));
+}
+
+.music-icon {
+    color: var(--doom-red);
+    margin-right: 8px;
+    font-size: 1rem;
+}
+
+.volume-btn {
+    position: relative;
+    margin-left: 5px;
+}
+
+.volume-btn:hover {
+    color: var(--doom-yellow);
+    transform: scale(1.1);
+}
+
+.volume-btn.active {
+    color: var(--doom-yellow);
+    text-shadow: 0 0 10px var(--doom-yellow);
+}
+
+.volume-slider-container {
+    position: relative;
+    background: rgba(20, 0, 0, 0.95);
+    padding: 10px;
+    border: 2px solid var(--doom-dark-red);
+    z-index: 1001;
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.4);
+    clip-path: polygon(0 10px, 10px 0,
+            calc(100% - 10px) 0, 100% 10px,
+            100% calc(100% - 10px), calc(100% - 10px) 100%,
+            10px 100%, 0 calc(100% - 10px));
+}
+
+.volume-slider-container.always-visible {
+    margin-left: 5px;
+    padding: 0;
+    border: none;
+    background: none;
+    box-shadow: none;
+    clip-path: none;
+    display: flex;
+    align-items: center;
+    width: 100px;
+    height: 40px;
+}
+
+.slider-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    border-bottom: 1px solid var(--doom-dark-red);
+    padding-bottom: 8px;
+}
+
+.slider-header span {
+    font-family: 'EternalBattleBold', 'Arvo', sans-serif;
+    color: var(--doom-red);
+    font-size: 0.9rem;
+    text-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
+}
+
+.close-slider {
+    background: none;
+    border: none;
+    color: var(--doom-red);
+    cursor: pointer;
+    font-size: 0.9rem;
+    padding: 2px 6px;
+    transition: all 0.2s;
+}
+
+.close-slider:hover {
+    transform: scale(1.2);
+    color: #fff;
+    text-shadow: 0 0 5px rgba(255, 0, 0, 0.7);
+}
+
+/* Volume slider is now always visible */
+
+.volume-slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 7px;
+    background: #444;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+/* Volume value display */
+.volume-value {
+    color: var(--text-primary);
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
+    position: absolute;
+    right: -40px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.volume-slider:hover {
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
+}
+
+.volume-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    background: var(--doom-red);
+    cursor: pointer;
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    transition: all 0.2s;
+    box-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
+}
+
+.volume-slider::-webkit-slider-thumb:hover {
+    transform: scale(1.2);
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.7);
+    background: linear-gradient(135deg, var(--doom-red), var(--doom-dark-red));
+}
+
+.volume-slider::-moz-range-thumb {
+    width: 18px;
+    height: 18px;
+    background: var(--doom-red);
+    cursor: pointer;
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    transition: all 0.2s;
+    border: none;
+    box-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
+}
+
+.volume-slider::-moz-range-thumb:hover {
+    transform: scale(1.2);
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.7);
+    background: linear-gradient(135deg, var(--doom-red), var(--doom-dark-red));
+}
+
+/* Update question and answer elements to use the Arvo font */
+#question-container,
+#answer-buttons,
+.btn,
+.answer-option,
+.explanation,
+#feedback-text,
+#timer,
+.quiz-info,
+.quiz-progress,
+#category-badge,
+.stat-label,
+.stat-value,
+p,
+.modal-content,
+input[type="text"] {
+    font-family: 'Arvo', serif;
+}
+
+#question,
+label,
+.answer-option label {
+    font-family: 'Arvo', serif;
+    text-transform: unset;
+}
+
+/* Buttons */
+.btn {
+    font-family: 'EternalBattleBold', 'Arvo', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: bold;
+    padding: 0.8rem 1.5rem;
+    border: 2px solid var(--doom-red);
+    background: var(--doom-dark-red);
+    color: white;
+    text-shadow: 0 0 3px var(--doom-red);
+    box-shadow: 0 4px 0 var(--doom-darker-red),
+        0 0 15px rgba(255, 0, 0, 0.3),
+        inset 0 0 5px rgba(255, 0, 0, 0.5);
+    transition: all 0.15s;
+    font-size: 1.1rem;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    position: relative;
+    clip-path: polygon(0 0,
+            calc(100% - 8px) 0,
+            100% 8px,
+            100% 100%,
+            8px 100%,
+            0 calc(100% - 8px));
+}
+
+#timer {
+    font-family: 'EternalBattleBold';
+    gap: 5px;
+}
+
+/* DOOM-inspired checkbox and radio styling */
+input[type="checkbox"],
+input[type="radio"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 22px;
+    height: 22px;
+    background: rgba(0, 0, 0, 0.7);
+    border: 2px solid var(--doom-dark-red);
+    position: relative;
+    cursor: pointer;
+    margin-right: 10px;
+    vertical-align: middle;
+    transition: all 0.2s ease;
+}
+
+input[type="checkbox"] {
+    clip-path: polygon(0 25%, 25% 0,
+            75% 0, 100% 25%,
+            100% 75%, 75% 100%,
+            25% 100%, 0 75%);
+}
+
+input[type="radio"] {
+    border-radius: 50%;
+    box-shadow: 0 0 5px rgba(255, 0, 0, 0.3);
+}
+
+input[type="checkbox"]:checked,
+input[type="radio"]:checked {
+    background: linear-gradient(135deg, var(--doom-red), var(--doom-dark-red));
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.4);
+}
+
+input[type="checkbox"]:checked::after {
+    content: '✓';
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
+}
+
+input[type="radio"]:checked::after {
+    content: '';
+    width: 10px;
+    height: 10px;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
+}
+
+input[type="checkbox"]:hover,
+input[type="radio"]:hover {
+    background-color: rgba(50, 0, 0, 0.7);
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
+}
+
+label {
+    font-family: 'Arvo', serif;
+    color: var(--text-primary);
+    cursor: pointer;
+    user-select: none;
+    display: inline-flex;
+    align-items: center;
+    margin: 8px 0;
+    text-shadow: 0 0 3px rgba(255, 0, 0, 0.4);
+    transition: all 0.2s ease;
+}
+
+label:hover {
+    color: var(--doom-lighter-red);
+}
+
+#results-buttons {
+    display: flex;
+    flex-flow: column;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+#start-btn {
+    /* display: flex; */
+    width: 100%;
+}
+
+#volume-value-display {
+    display: none;
+}
+
+#category-badge {
+    display: none;
+}
+
+.quiz-progress {
+    font-family: 'EternalBattleBold' !important;
+    width: 100%;
+}

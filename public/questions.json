@@ -1,0 +1,2493 @@
+[
+    {
+        "text": "Označi bitna svojstva svake informacije:",
+        "category": "Predavanje 1",
+        "explanation": "Bitna svojstva informacije su: vrijednost u vremenu (informacija ima vrijednost samo u određenom trenutku), količina (količina informacije koja se prenosi) i vrsnoća (kvaliteta informacije).",
+        "answers": [
+            {
+                "text": "Broj stranica na kojima je informacija zapisana",
+                "correct": false
+            },
+            {
+                "text": "Vrijednost u vremenu",
+                "correct": true
+            },
+            {
+                "text": "Ukupna težina informacije",
+                "correct": false
+            },
+            {
+                "text": "Količina",
+                "correct": true
+            },
+            {
+                "text": "Broj ljudi koji su pročitali informaciju",
+                "correct": false
+            },
+            {
+                "text": "Vrsnoća",
+                "correct": true
+            }
+        ]
+    },
+    {
+        "text": "Označite komponente poslovnog sustava:",
+        "category": "Predavanje 1",
+        "explanation": "Poslovni sustav čine tri glavne komponente: ljudska komponenta (zaposlenici i njihovo znanje), mrežna komponenta (infrastruktura) i organizacijska komponenta (procesi i organizacijska struktura).",
+        "answers": [
+            {
+                "text": "Ljudska komponenta",
+                "correct": true
+            },
+            {
+                "text": "Mrežna komponenta",
+                "correct": true
+            },
+            {
+                "text": "Organizacijska komponenta",
+                "correct": true
+            },
+            {
+                "text": "Kabelska komponenta",
+                "correct": false
+            },
+            {
+                "text": "Satelitska komponenta",
+                "correct": false
+            }
+        ]
+    },
+    {
+        "text": "Pod pojmom sustava podrazumijeva se svaki uređeni skup koji se sastoji od najviše dva elementa koji međusobnim djelovanjem ostvaruju neku funkciju cjeline.",
+        "category": "Predavanje 1",
+        "explanation": "Ova tvrdnja je netočna jer sustav može sadržavati više od dva elementa. Točna definicija je da je sustav uređeni skup koji se sastoji od barem dva elementa koji međusobnim djelovanjem ostvaruju neku funkciju cjeline.",
+        "answers": [
+            {
+                "text": "Točno",
+                "correct": false
+            },
+            {
+                "text": "Netočno",
+                "correct": true
+            }
+        ]
+    },
+    {
+        "text": "Faza konsolidacije u životnom ciklusu sustava usmjerena je na stabilizaciju i optimiziranje sustava nakon uspješne implementacije.",
+        "category": "Predavanje 1",
+        "explanation": "Tijekom faze konsolidacije sustav se stabilizira i optimizira nakon implementacije. U ovoj fazi se rješavaju problemi, otklanjaju greške i podešavaju performanse kako bi sustav radio što učinkovitije.",
+        "answers": [
+            {
+                "text": "Točno",
+                "correct": true
+            },
+            {
+                "text": "Netočno",
+                "correct": false
+            }
+        ]
+    },
+    {
+        "text": "Životni ciklus sustava sastoji se od četiri osnovne razvojne faze. Naziv treće faze je:",
+        "explanation": "Četiri osnovne faze životnog ciklusa sustava su: inicijalizacija, ekspanzija, konsolidacija i zrelost. Konsolidacija je treća faza u kojoj se sustav stabilizira nakon brzog rasta u fazi ekspanzije.",
+        "answers": [
+            {
+                "text": "Faza ekspanzije",
+                "correct": false
+            },
+            {
+                "text": "Faza inicijalizacije",
+                "correct": false
+            },
+            {
+                "text": "Faza zrelosti sustava",
+                "correct": false
+            },
+            {
+                "text": "Faza konsolidacije",
+                "correct": true
+            }
+        ]
+    },
+    {
+        "text": "Faza konsolidacije u životnom ciklusu sustava dolazi prije faze zrelosti.",
+        "answers": [
+            {
+                "text": "Točno",
+                "correct": true
+            },
+            {
+                "text": "Netočno",
+                "correct": false
+            }
+        ]
+    },
+    {
+        "text": "S obzirom na prirodu veza razlikuju se:",
+        "answers": [
+            {
+                "text": "Ulazne veze",
+                "correct": false
+            },
+            {
+                "text": "Informacijske veze",
+                "correct": true
+            },
+            {
+                "text": "Energetske veze",
+                "correct": true
+            },
+            {
+                "text": "Materijalne veze",
+                "correct": true
+            }
+        ]
+    },
+    {
+        "text": "Koje su osnovne komponente potrebne za primjenu metode kritičnog puta (CPM)?",
+        "answers": [
+            {
+                "text": "Troškovi resursa",
+                "correct": false
+            },
+            {
+                "text": "Vremena trajanja aktivnosti",
+                "correct": true
+            },
+            {
+                "text": "Aktivnosti",
+                "correct": true
+            },
+            {
+                "text": "Prikaz ovisnosti između aktivnosti",
+                "correct": true
+            }
+        ]
+    },
+    {
+        "text": "Koji su ključni ciljevi metode kritičnog puta (CPM)?",
+        "answers": [
+            {
+                "text": "Optimizacija resursa",
+                "correct": false
+            },
+            {
+                "text": "Minimiziranje trajanja projekta",
+                "correct": false
+            },
+            {
+                "text": "Identifikacija kritičnih aktivnosti",
+                "correct": true
+            },
+            {
+                "text": "Praćenje napretka projekta",
+                "correct": true
+            }
+        ]
+    },
+    {
+        "text": "Koje su ključne karakteristike metode Critical Chain?",
+        "answers": [
+            {
+                "text": "Fokus na identifikaciji kritičnih aktivnosti",
+                "correct": true
+            },
+            {
+                "text": "Raspodjela resursa prema tradicionalnim metodama",
+                "correct": false
+            },
+            {
+                "text": "Upotreba rezervi vremena za svaku aktivnost",
+                "correct": false
+            },
+            {
+                "text": "Uključivanje \"buffera\" za nesigurnosti",
+                "correct": true
+            }
+        ]
+    },
+    {
+        "text": "Koju podršku pruža transakcijski sustav tekućem odvijanju poslovnog procesa?",
+        "answers": [
+            {
+                "text": "Grafički dizajn web stranica",
+                "correct": false
+            },
+            {
+                "text": "Automatizaciju proizvodnje",
+                "correct": false
+            },
+            {
+                "text": "Marketing kampanje",
+                "correct": false
+            },
+            {
+                "text": "Praćenje rutinskih poslovnih događaja",
+                "correct": true
+            }
+        ]
+    },
+    {
+        "text": "Poslovni sustav nije adaptivan jer ima sposobnost uočavanja promjena i prilagođavanja u skladu s novim uvjetima.",
+        "answers": [
+            {
+                "text": "Točno",
+                "correct": false
+            },
+            {
+                "text": "Netočno",
+                "correct": true
+            }
+        ]
+    },
+    {
+        "text": "Generiranje raznovrsnih dokumenata nije dio osnovnih funkcija transakcijskog sustava.",
+        "answers": [
+            {
+                "text": "Točno",
+                "correct": false
+            },
+            {
+                "text": "Netočno",
+                "correct": true
+            }
+        ]
+    },
+    {
+        "text": "Jedna od općih funkcija transakcijskog sustava je praćenje zaliha.",
+        "answers": [
+            {
+                "text": "Točno",
+                "correct": true
+            },
+            {
+                "text": "Netočno",
+                "correct": false
+            }
+        ]
+    },
+    {
+        "text": "Informacije o promjenama uočene na izlazu sustava mehanizmom povratne veze upućuju se natrag prema ulazu. To omogućuje da se regulira sustav. Upravljački procesi imaju pritom ulogu kontrolnog, odnosno upravljačkog mehanizma.",
+        "answers": [
+            {
+                "text": "Točno",
+                "correct": true
+            },
+            {
+                "text": "Netočno",
+                "correct": false
+            }
+        ]
+    },
+    {
+        "text": "Izvršni podsustav je namijenjen izvođenju poslovnih procesa.",
+        "answers": [
+            {
+                "text": "Točno",
+                "correct": true
+            },
+            {
+                "text": "Netočno",
+                "correct": false
+            }
+        ]
+    },
+    {
+        "text": "Odlučivanje je osnovna funkcija upravljanja.",
+        "answers": [
+            {
+                "text": "Točno",
+                "correct": true
+            },
+            {
+                "text": "Netočno",
+                "correct": false
+            }
+        ]
+    },
+    {
+        "text": "Poslovni sustav je adaptivan jer nema sposobnost učenja i prilagođavanja u skladu s novim uvjetima.",
+        "answers": [
+            {
+                "text": "Točno",
+                "correct": false
+            },
+            {
+                "text": "Netočno",
+                "correct": true
+            }
+        ]
+    },
+    {
+        "text": "Transakcijski sustav pruža podršku samo specifičnim poslovnim procesima.",
+        "answers": [
+            {
+                "text": "Točno",
+                "correct": false
+            },
+            {
+                "text": "Netočno",
+                "correct": true
+            }
+        ]
+    },
+    {
+        "text": "Označi komponente Business Canvasa",
+        "answers": [
+            {
+                "text": "Prijedlog vrijednosti",
+                "correct": true
+            },
+            {
+                "text": "Ključni resursi",
+                "correct": true
+            },
+            {
+                "text": "Odnosi s kupcima",
+                "correct": true
+            },
+            {
+                "text": "Sporedne aktivnosti",
+                "correct": false
+            },
+            {
+                "text": "Ključna partnerstva",
+                "correct": true
+            },
+            {
+                "text": "Kanali",
+                "correct": true
+            },
+            {
+                "text": "Ključne aktivnosti",
+                "correct": true
+            }
+        ]
+    },
+    {
+        "text": "Označi komponente Business Canvasa",
+        "answers": [
+            {
+                "text": "Struktura prihoda",
+                "correct": false
+            },
+            {
+                "text": "Tokovi prihoda",
+                "correct": true
+            },
+            {
+                "text": "Struktura troškova",
+                "correct": true
+            },
+            {
+                "text": "Segmenti kupaca",
+                "correct": true
+            }
+        ]
+    },
+    {
+        "text": "Business Model ___ je alat za strateško upravljanje za vizualizaciju i razvoj poslovnih modela.",
+        "type": "fill-in-the-blank",
+        "correctAnswer": [
+            "Canvas",
+            "canvas"
+        ]
+    },
+    {
+        "text": "Primjeri ___ su: proizvodnja, marketing, istraživanje, razvoj itd.",
+        "type": "fill-in-the-blank",
+        "correctAnswer": [
+            "key activities",
+            "Key activities",
+            "ključne aktivnosti",
+            "Ključne aktivnosti"
+        ]
+    },
+    {
+        "text": "___ opisuje vrijednost ponuđenu kupcima, bavi se potrebama kupaca i bolnim točkama.",
+        "type": "fill-in-the-blank",
+        "correctAnswer": [
+            "Value proposition",
+            "value proposition",
+            "Prijedlog vrijednosti",
+            "prijedlog vrijednosti"
+        ]
+    },
+    {
+        "text": "Business Model Canvas razvio je A. Osterwalder, pruža sažeti okvir za razumijevanje sporednih komponenti poduzeća.",
+        "answers": [
+            {
+                "text": "Točno",
+                "correct": false
+            },
+            {
+                "text": "Netočno",
+                "correct": true
+            }
+        ]
+    },
+    {
+        "text": "U modelu skrivenog generiranja prihoda govorimo o unovčavanju usluga bez da su korisnici potpuno toga svjesni, često kroz korištenje podataka.",
+        "answers": [
+            {
+                "text": "Točno",
+                "correct": true
+            },
+            {
+                "text": "Netočno",
+                "correct": false
+            }
+        ]
+    },
+    {
+        "text": "Peer to peer, dvostrano tržište omogućuje povezivanje korisnika radi razmjene proizvoda ili usluga, oslanjajući se na dinamiku ponude i potražnje.",
+        "answers": [
+            {
+                "text": "Točno",
+                "correct": true
+            },
+            {
+                "text": "Netočno",
+                "correct": false
+            }
+        ]
+    },
+    {
+        "text": "Poslovni model opisuje kako tvrtka stvara, isporučuje i ostvaruje vrijednosti. Ne obuhvaća ključne aspekte poslovne strategije, planiranja i stvaranja prihoda.",
+        "answers": [
+            {
+                "text": "Točno",
+                "correct": false
+            },
+            {
+                "text": "Netočno",
+                "correct": true
+            }
+        ]
+    },
+    {
+        "text": "Struktura troškova ocrtava troškove nastale samo u proizvodnji.",
+        "answers": [
+            {
+                "text": "Točno",
+                "correct": false
+            },
+            {
+                "text": "Netočno",
+                "correct": true
+            }
+        ]
+    },
+    {
+        "text": "Poslovni model pomaže u razumijevanju tržišta, potreba kupaca i konkurentske prednosti.",
+        "answers": [
+            {
+                "text": "Točno",
+                "correct": true
+            },
+            {
+                "text": "Netočno",
+                "correct": false
+            }
+        ]
+    },
+    {
+        "text": "Modeliranje odluka ne pokazuje kako se donose ponovljive poslovne odluke",
+        "answers": [
+            {
+                "text": "Točno",
+                "correct": false
+            },
+            {
+                "text": "Netočno",
+                "correct": true
+            }
+        ]
+    },
+    {
+        "text": "Grafički model odlučivanja može se konstruirati na različitim razinama, pri čemu visokorazinski model može prikazivati poslovne odluke u poslovnim procesima.",
+        "answers": [
+            {
+                "text": "Točno",
+                "correct": true
+            },
+            {
+                "text": "Netočno",
+                "correct": false
+            }
+        ]
+    },
+    {
+        "text": "Tablice odlučivanja (Decision tables) i stabla odlučivanja (Decision trees) definiraju kako se donosi određena odluka.",
+        "answers": [
+            {
+                "text": "Točno",
+                "correct": true
+            },
+            {
+                "text": "Netočno",
+                "correct": false
+            }
+        ]
+    },
+    {
+        "text": "Analitički hijerarhijski proces pomaže organizacijama da donesu ispravne odluke u jednostavnim situacijama.",
+        "answers": [
+            {
+                "text": "Točno",
+                "correct": false
+            },
+            {
+                "text": "Netočno",
+                "correct": true
+            }
+        ]
+    },
+    {
+        "text": "Analizom odluka ispituju se i modeliraju moguće posljedice različitih odluka o određenom problemu",
+        "answers": [
+            {
+                "text": "Točno",
+                "correct": true
+            },
+            {
+                "text": "Netočno",
+                "correct": false
+            }
+        ]
+    },
+    {
+        "text": "Analitički hijerarhijski proces često je usredotočen na individualni proces donošenja odluka.",
+        "answers": [
+            {
+                "text": "Točno",
+                "correct": false
+            },
+            {
+                "text": "Netočno",
+                "correct": true
+            }
+        ]
+    },
+    {
+        "text": "Metoda Analitičkog hijerarhijskog procesa razvijena je kako bi proces donošenja odluka bio transparentan i dostupan što većem broju uključenih osoba.",
+        "answers": [
+            {
+                "text": "Točno",
+                "correct": true
+            },
+            {
+                "text": "Netočno",
+                "correct": false
+            }
+        ]
+    },
+    {
+        "text": "Analitički hijerarhijski proces je lokalna tehnika donošenja odluka.",
+        "answers": [
+            {
+                "text": "Točno",
+                "correct": false
+            },
+            {
+                "text": "Netočno",
+                "correct": true
+            }
+        ]
+    },
+    {
+        "text": "Različite razine u stablu odlučivanja predstavljaju različite uvjetne podatke.",
+        "answers": [
+            {
+                "text": "Točno",
+                "correct": true
+            },
+            {
+                "text": "Netočno",
+                "correct": false
+            }
+        ]
+    },
+    {
+        "text": "Vrijednost kriterija u Analitičkom hijerarhijskom procesu određuje se subjektivno, bez matematičkog pristupa.",
+        "answers": [
+            {
+                "text": "Točno",
+                "correct": false
+            },
+            {
+                "text": "Netočno",
+                "correct": true
+            }
+        ]
+    },
+    {
+        "text": "Modeliranje odluka moguće je odraditi pomoću više pristupa. Svaki od tih pristupa kao ključni element sadrži",
+        "answers": [
+            {
+                "text": "mudrost",
+                "correct": false
+            },
+            {
+                "text": "znanje",
+                "correct": true
+            }
+        ]
+    },
+    {
+        "text": "Stablo odlučivanja koristi se samo za vizualizaciju, a ne za prikazivanje skupa poslovnih pravila.",
+        "answers": [
+            {
+                "text": "Točno",
+                "correct": false
+            },
+            {
+                "text": "Netočno",
+                "correct": true
+            }
+        ]
+    },
+    {
+        "text": "U metodi Critical Chain, ___ je dodatno vrijeme dodijeljeno na kraj projekta kako bi se apsorbirale nesigurnosti i osiguralo da projekt završi na vrijeme.",
+        "type": "fill-in-the-blank",
+        "correctAnswer": [
+            "buffer",
+            "Buffer",
+            "međuspremnik"
+        ]
+    },
+    {
+        "text": "___ je djelatnost poduzeća i drugih poslovnih sustava koja se brine o opskrbi materijalima, opremom, uslugama i energijom potrebnim za realizaciju ciljeva poslovnog sustava.",
+        "type": "fill-in-the-blank",
+        "correctAnswer": [
+            "Nabava",
+            "nabava"
+        ]
+    },
+    {
+        "text": "___ - posljednja ključna aplikacija modula upravljanja narudžbama u prodaji jest konsolidacija i ispostavljanje izlaznog računa u kojoj će biti navedene sve financijske obaveze kupca.",
+        "type": "fill-in-the-blank",
+        "correctAnswer": [
+            "Fakturiranje",
+            "fakturiranje"
+        ]
+    },
+    {
+        "text": "Aplikacija planiranje akcija poticanja na kupnju se koristi u svakodnevnom, rutinskom poslovanju.",
+        "answers": [
+            {
+                "text": "Točno",
+                "correct": false
+            },
+            {
+                "text": "Netočno",
+                "correct": true
+            }
+        ]
+    },
+    {
+        "text": "Unesi kraticu za povrat uloženih sredstava",
+        "type": "fill-in-the-blank",
+        "category": "Predavanje 6",
+        "correctAnswer": [
+            "ROI",
+            "roi",
+            "Return on Investment",
+            "povrat investicije"
+        ]
+    },
+    {
+        "text": "Alat koji omogućuje programerima, sys-administratorima itd., da lako deploy-aju svoje aplikacije u \"spremnike\" kako bi se izvodili na odredišnom operacijskom sustavu, tj. Linuxu.",
+        "type": "fill-in-the-blank",
+        "category": "Predavanje 14",
+        "correctAnswer": [
+            "docker",
+            "Docker",
+            "Docker Engine"
+        ]
+    },
+    {
+        "text": "___ je koristan za utvrđivanje razlike između kupovine i dugoročnog troška investiranja.",
+        "type": "fill-in-the-blank",
+        "correctAnswer": [
+            "Total Cost of Ownership",
+            "TCO",
+            "total cost of ownership"
+        ]
+    },
+    {
+        "text": "Skladište podataka predstavlja izdvojeni, mali skup podataka koji je oblikom i sadržajem pripremljen za zahtjevne analize, kako bi se iz njega izvukle informacije i znanje potrebno pri odlučivanju i upravljanju.",
+        "answers": [
+            {
+                "text": "Točno",
+                "correct": false
+            },
+            {
+                "text": "Netočno",
+                "correct": true
+            }
+        ]
+    },
+    {
+        "text": "Označi obilježja analitičkih obrada",
+        "answers": [
+            {
+                "text": "Izvještavanje o stanju poslovnog procesa, odlučivanje na strateškoj i taktičkoj razini",
+                "correct": true
+            },
+            {
+                "text": "Učinkovitost poslovnog procesa",
+                "correct": false
+            },
+            {
+                "text": "Informacije i znanje u skladištu podataka",
+                "correct": true
+            },
+            {
+                "text": "Automatizacija intelektualnih procesa",
+                "correct": true
+            },
+            {
+                "text": "Učinkovitost procesa odlučivanja",
+                "correct": true
+            },
+            {
+                "text": "Izvršenje poslovnog procesa na operativnoj razini",
+                "correct": false
+            },
+            {
+                "text": "Automatizacija manualnih procesa",
+                "correct": false
+            },
+            {
+                "text": "Podaci u bazi podataka",
+                "correct": false
+            }
+        ]
+    },
+    {
+        "text": "Odaberi sastavnice poslovne inteligencije:",
+        "answers": [
+            {
+                "text": "Inteligencija vrijednosnog lanca",
+                "correct": true
+            },
+            {
+                "text": "Inteligencija menadžmenta",
+                "correct": true
+            },
+            {
+                "text": "Inteligencija kupaca",
+                "correct": false
+            },
+            {
+                "text": "Klijentska inteligencija",
+                "correct": true
+            },
+            {
+                "text": "Inteligencija poslovnih procesa",
+                "correct": true
+            },
+            {
+                "text": "Inteligencija okoline",
+                "correct": false
+            },
+            {
+                "text": "Kompetitivna inteligencija",
+                "correct": true
+            }
+        ]
+    },
+    {
+        "text": "Podaci se u skladištu mogu grupirati u skupinu unutarnjih i skupinu vanjskih podataka.",
+        "answers": [
+            {
+                "text": "Točno",
+                "correct": true
+            },
+            {
+                "text": "Netočno",
+                "correct": false
+            }
+        ]
+    },
+    {
+        "text": "S obzirom na temeljne značajke poslovnog izvještavanja označi koje vrste poslovnih izvještaja razlikujemo",
+        "answers": [
+            {
+                "text": "Parametrizirani izvještaj",
+                "correct": true
+            },
+            {
+                "text": "Godišnji izvještaj",
+                "correct": false
+            },
+            {
+                "text": "Mjesečni izvještaj",
+                "correct": false
+            },
+            {
+                "text": "Standardizirani izvještaj",
+                "correct": true
+            },
+            {
+                "text": "Personalizirani izvještaj",
+                "correct": true
+            }
+        ]
+    },
+    {
+        "text": "Tijekom izvođenja ___ procedura podaci se izvlače iz različitih izvora (ekstrahiraju), transformiraju se u odgovarajući oblik (pročišćavaju, \"popravljaju\") i zatim se učitaju, odnosno unose u skladište podataka.",
+        "type": "fill-in-the-blank",
+        "category": "Predavanje 7",
+        "explanation": "ETL (Extract, Transform, Load) je proces kojim se podaci iz više izvora ekstrahiraju, transformiraju u odgovarajući format i učitavaju u skladište podataka za potrebe analize i izvještavanja.",
+        "correctAnswer": [
+            "ETL",
+            "etl",
+            "Extract Transform Load",
+            "extract transform load"
+        ]
+    },
+    {
+        "text": "Podaci u skladištu podataka su ___ - ako dva korisnika s dva različita mjesta u različito vrijeme postave jednak upit, rezultat tih upita bit će jednak.",
+        "type": "fill-in-the-blank",
+        "category": "Predavanje 7",
+        "correctAnswer": [
+            "konzistentni",
+            "konzistentno",
+            "dosljedni",
+            "consistent"
+        ]
+    },
+    {
+        "text": "Najveća je prednost ___ strukture mogućnost vizualizacije podataka.",
+        "type": "fill-in-the-blank",
+        "category": "Predavanje 7",
+        "correctAnswer": [
+            "dimenzijske",
+            "dimenzionalne",
+            "dimensional"
+        ]
+    },
+    {
+        "text": "___ – sposobnost zadovoljavanja informacijskih potreba korisnika, odnosno ostvarivanja uvjeta u kojima korisnik može donijeti odgovarajuću odluku.",
+        "type": "fill-in-the-blank",
+        "correctAnswer": [
+            "Vrsnoća",
+            "vrsnoća"
+        ]
+    },
+    {
+        "text": "___ način je upravljanja poduzećem usredotočen na kakvoću, utemeljen na sudjelovanju svih članova organizacije te zadovoljavanjem korisnika, teži za dugoročnim uspjehom i boljitkom za sve članove organizacije i zajednice u cjelini.",
+        "type": "fill-in-the-blank",
+        "correctAnswer": [
+            "TQM",
+            "tqm",
+            "Total Quality Management",
+            "total quality management"
+        ]
+    },
+    {
+        "text": "___ je trošak poslovanja koji nastaje uporabom dugotrajne imovine koja ima ograničeni vijek trajanja i obračunava se tijekom procijenjenog vijeka uporabe dugotrajne imovine.",
+        "type": "fill-in-the-blank",
+        "correctAnswer": [
+            "Amortizacija",
+            "amortizacija"
+        ]
+    },
+    {
+        "text": "Označi koje su osnovne operacije na dimenzijskom roku:",
+        "answers": [
+            {
+                "text": "Selekcija i isijecanje",
+                "correct": true
+            },
+            {
+                "text": "Detaljiziranje",
+                "correct": true
+            },
+            {
+                "text": "Vektorizacija",
+                "correct": false
+            },
+            {
+                "text": "Agregiranje",
+                "correct": true
+            },
+            {
+                "text": "Rotacija",
+                "correct": true
+            },
+            {
+                "text": "Komprimiranje",
+                "correct": false
+            },
+            {
+                "text": "Agregacija",
+                "correct": false
+            }
+        ]
+    },
+    {
+        "text": "Označi obilježja transakcijskih obrada",
+        "answers": [
+            {
+                "text": "Učinkovitost poslovnog procesa",
+                "correct": true
+            },
+            {
+                "text": "Podaci u bazi podataka",
+                "correct": true
+            },
+            {
+                "text": "Informacije i znanje u skladištu podataka",
+                "correct": false
+            },
+            {
+                "text": "Izvještavanje o stanju poslovnog procesa, odlučivanje na strateškoj i taktičkoj razini",
+                "correct": false
+            },
+            {
+                "text": "Automatizacija intelektualnih procesa",
+                "correct": false
+            },
+            {
+                "text": "Učinkovitost procesa odlučivanja",
+                "correct": false
+            },
+            {
+                "text": "Automatizacija manualnih procesa",
+                "correct": true
+            },
+            {
+                "text": "Izvršenje poslovnog procesa na operativnoj razini",
+                "correct": true
+            }
+        ]
+    },
+    {
+        "text": "Selekcija, detaljiziranje i agregiranje spadaju pod analitičke obrade.",
+        "answers": [
+            {
+                "text": "Točno",
+                "correct": true
+            },
+            {
+                "text": "Netočno",
+                "correct": false
+            }
+        ]
+    },
+    {
+        "text": "U skladištu su podaci pripremljeni za zahtjevne analize i pronalaženje informacija nužnih za učinkovito odlučivanje i upravljanje.",
+        "answers": [
+            {
+                "text": "Točno",
+                "correct": true
+            },
+            {
+                "text": "Netočno",
+                "correct": false
+            }
+        ]
+    },
+    {
+        "text": "Online analitička obrada podataka OLAP omogućuje pretvorbu informacija u podatke, a potom i u poslovnu inteligenciju, s općim ciljem potpore odlučivanju.",
+        "answers": [
+            {
+                "text": "Točno",
+                "correct": false
+            },
+            {
+                "text": "Netočno",
+                "correct": true
+            }
+        ]
+    },
+    {
+        "text": "Podaci u skladištu su nepromjenjivi u smislu obrade, oni se učitavaju iz operativnih baza i oblikuju za potrebe analize.",
+        "answers": [
+            {
+                "text": "Točno",
+                "correct": true
+            },
+            {
+                "text": "Netočno",
+                "correct": false
+            }
+        ]
+    },
+    {
+        "text": "Označi aktivnosti podrške",
+        "answers": [
+            {
+                "text": "Upravljanje ljudskim potencijalima",
+                "correct": true
+            },
+            {
+                "text": "Kupnja",
+                "correct": true
+            },
+            {
+                "text": "Interna logistika",
+                "correct": false
+            },
+            {
+                "text": "Marketing i prodaja",
+                "correct": false
+            },
+            {
+                "text": "Organizacijska infrastruktura",
+                "correct": true
+            },
+            {
+                "text": "Usluga",
+                "correct": false
+            },
+            {
+                "text": "Operacije",
+                "correct": false
+            },
+            {
+                "text": "Vanjska logistika",
+                "correct": false
+            },
+            {
+                "text": "Razvoj tehnologije, istraživanje i razvoj",
+                "correct": true
+            }
+        ]
+    },
+    {
+        "text": "Lanac vrijednosti nastoji generirati konkurentske prednosti, a njegovo proučavanje primjenjuje se i na druge aktivnosti kao što su lanac opskrbe i distribucijske mreže.",
+        "answers": [
+            {
+                "text": "Točno",
+                "correct": true
+            },
+            {
+                "text": "Netočno",
+                "correct": false
+            }
+        ]
+    },
+    {
+        "text": "Između informacijskih podsustava postoje mnoge dodirne točke pa čak i određena funkcionalna preklapanja.",
+        "answers": [
+            {
+                "text": "Točno",
+                "correct": true
+            },
+            {
+                "text": "Netočno",
+                "correct": false
+            }
+        ]
+    },
+    {
+        "text": "Usmjerene su na fizičku pripremu svakog proizvoda i proces prijenosa do kupca.",
+        "answers": [
+            {
+                "text": "Aktivnosti podrške",
+                "correct": false
+            },
+            {
+                "text": "Primarne aktivnosti",
+                "correct": true
+            }
+        ]
+    },
+    {
+        "text": "Informacijski podustavi se međusobno ne preklapaju te svaki čini zasebnu, samostalnu cjelinu.",
+        "answers": [
+            {
+                "text": "Točno",
+                "correct": false
+            },
+            {
+                "text": "Netočno",
+                "correct": true
+            }
+        ]
+    },
+    {
+        "text": "Osnovni zadatak svakog poslovnog informacijskog sustava jest informatički podržavati ključne poslovne funkcije poduzeća.",
+        "answers": [
+            {
+                "text": "Točno",
+                "correct": true
+            },
+            {
+                "text": "Netočno",
+                "correct": false
+            }
+        ]
+    },
+    {
+        "text": "Informacijski podsustavi koji pružaju potporu ključnim poslovnim funkcijama, funkcijama bez kojih se ne može ostvariti niti jedan oblik poslovanja poduzeća nazivaju se standardnim informacijskim podsustavima poslovnog informacijskog sustava poduzeća.",
+        "answers": [
+            {
+                "text": "Točno",
+                "correct": true
+            },
+            {
+                "text": "Netočno",
+                "correct": false
+            }
+        ]
+    },
+    {
+        "text": "Označi aspekte konkurentskog krajolika",
+        "answers": [
+            {
+                "text": "Industrijska panorama",
+                "correct": true
+            },
+            {
+                "text": "Panorama kvalitete",
+                "correct": false
+            },
+            {
+                "text": "Panorama segmenta",
+                "correct": true
+            },
+            {
+                "text": "Konkurentska prednost",
+                "correct": false
+            },
+            {
+                "text": "Stupanj integracije",
+                "correct": true
+            },
+            {
+                "text": "Geografska panorama",
+                "correct": true
+            }
+        ]
+    },
+    {
+        "text": "Poslovni informacijski sustav sastoji se od informacijskih podsustava. Podsustavi se sastoje od aplikacija. Dok se aplikacija sastoji od modula.",
+        "answers": [
+            {
+                "text": "Točno",
+                "correct": false
+            },
+            {
+                "text": "Netočno",
+                "correct": true
+            }
+        ]
+    },
+    {
+        "text": "Označi primarne djelatnosti",
+        "answers": [
+            {
+                "text": "Razvoj tehnologije, istraživanje i razvoj",
+                "correct": false
+            },
+            {
+                "text": "Organizacijska infrastruktura",
+                "correct": false
+            },
+            {
+                "text": "Vanjska logistika",
+                "correct": true
+            },
+            {
+                "text": "Usluga",
+                "correct": true
+            },
+            {
+                "text": "Kupnja",
+                "correct": false
+            },
+            {
+                "text": "Interna logistika",
+                "correct": true
+            },
+            {
+                "text": "Marketing i prodaja",
+                "correct": true
+            },
+            {
+                "text": "Upravljanje ljudskim potencijalima",
+                "correct": false
+            },
+            {
+                "text": "Operacije",
+                "correct": true
+            }
+        ]
+    },
+    {
+        "text": "Označi standardne informacijske podsustave poslovnog informacijskog sustava:",
+        "answers": [
+            {
+                "text": "Informacijski podsustav upravljanja ljudskim resursima",
+                "correct": true
+            },
+            {
+                "text": "Informacijski podsustav validacije",
+                "correct": false
+            },
+            {
+                "text": "Informacijski podsustav proizvodnje ili pružanja usluga",
+                "correct": true
+            },
+            {
+                "text": "Informacijski podsustav upravljanja trajnom poslovnom imovinom",
+                "correct": true
+            },
+            {
+                "text": "Informacijski podustav analize i planiranja poslovanja",
+                "correct": true
+            },
+            {
+                "text": "Informacijski podsustav prodaje i izlazne logistike",
+                "correct": true
+            },
+            {
+                "text": "Informacijski podsustav profita",
+                "correct": false
+            },
+            {
+                "text": "Informacijski podustav nabave materijala i sirovina i ulazne logistike",
+                "correct": true
+            },
+            {
+                "text": "Informacijski podustav upravljanja kvalitetom",
+                "correct": false
+            },
+            {
+                "text": "Informacijski podsustav računovodstva i upravljanja financijama",
+                "correct": true
+            }
+        ]
+    },
+    {
+        "text": "Poslovni ciklus započinje analizom postojećeg (aktualnog) stanja poslovanja i planiranjem budućih poslovnih aktivnosti ovisno o rezultatima provedene analize.",
+        "answers": [
+            {
+                "text": "Točno",
+                "correct": true
+            },
+            {
+                "text": "Netočno",
+                "correct": false
+            }
+        ]
+    },
+    {
+        "text": "Modul analitika profitabilnosti, modul analitika ponašanja prilikom plaćanja i modul financijsko upravljačko izvještavanje samo su neki modula koje pronalazimo u aplikaciji financijske analitike i planiranja.",
+        "answers": [
+            {
+                "text": "Točno",
+                "correct": false
+            },
+            {
+                "text": "Netočno",
+                "correct": true
+            }
+        ]
+    },
+    {
+        "text": "Označi aplikacije modula financijske analitike i planiranja",
+        "answers": [
+            {
+                "text": "Analitika usluga pružanih klijentima",
+                "correct": false
+            },
+            {
+                "text": "Analitika prodaje",
+                "correct": false
+            },
+            {
+                "text": "Financijsko planiranje, budžetiranje i predviđanje",
+                "correct": true
+            },
+            {
+                "text": "Analitika transporta",
+                "correct": false
+            },
+            {
+                "text": "Financijsko i upravljačko izvještavanje",
+                "correct": true
+            },
+            {
+                "text": "Analitika profitabilnosti",
+                "correct": true
+            },
+            {
+                "text": "Analitika troškova proizvoda i usluga",
+                "correct": true
+            },
+            {
+                "text": "Analitika ponašanja prilikom plaćanja",
+                "correct": true
+            }
+        ]
+    },
+    {
+        "text": "Aplikacije: analitika nabave, analitika zaliha i skladišnog poslovanja, analitika proizvodnje, analitika transporta, analitika prodaje, analitika usluga pružanih klijentima, analitika upravljanja klijentom čine modul strateškog planiranja poslovanja.",
+        "answers": [
+            {
+                "text": "Točno",
+                "correct": false
+            },
+            {
+                "text": "Netočno",
+                "correct": true
+            }
+        ]
+    },
+    {
+        "text": "Aplikacije: usklađivanje s pravnom regulativom i standardima struke, opće strateško planiranje, strateško financijsko planiranje, planiranje unutarnjih ulaganja, planiranje vanjskih ulaganja pripadaju modulu operativne analitike i planiranja.",
+        "answers": [
+            {
+                "text": "Točno",
+                "correct": false
+            },
+            {
+                "text": "Netočno",
+                "correct": true
+            }
+        ]
+    },
+    {
+        "text": "Koji je najsloženiji modul IPS-a analize i planiranja poslovanja?",
+        "answers": [
+            {
+                "text": "Modul financijske analitike i planiranja",
+                "correct": false
+            },
+            {
+                "text": "Modul financijsko i upravljačko izvještavanje",
+                "correct": false
+            },
+            {
+                "text": "Modul analitike i planiranja rada zaposlenika",
+                "correct": true
+            },
+            {
+                "text": "Modul operativne analitike poslovanja",
+                "correct": false
+            },
+            {
+                "text": "Modul strateškog planiranja poslovanja",
+                "correct": false
+            }
+        ]
+    },
+    {
+        "text": "Označi module IPS analize i planiranja poslovanja",
+        "answers": [
+            {
+                "text": "Modul analitike i planiranja rada zaposlenika",
+                "correct": true
+            },
+            {
+                "text": "Modul strateškog planiranja poslovanja",
+                "correct": true
+            },
+            {
+                "text": "Modul operativne analitike poslovanja",
+                "correct": true
+            },
+            {
+                "text": "Modul financijsko i upravljačko izvještavanje",
+                "correct": false
+            },
+            {
+                "text": "Modul financijske analitike i planiranja",
+                "correct": true
+            }
+        ]
+    },
+    {
+        "text": "Modul analitike i planiranja rada zaposlenika u uskoj je vezi s odgovarajućim modulima IPS-a upravljanja ljudskim resursima.",
+        "answers": [
+            {
+                "text": "Točno",
+                "correct": true
+            },
+            {
+                "text": "Netočno",
+                "correct": false
+            }
+        ]
+    },
+    {
+        "text": "Označi koje aplikacije pronalazimo u modulu analitike i planiranja rada zaposlenika",
+        "category": "Predavanje 10",
+        "explanation": "Modul analitike i planiranja rada zaposlenika sadrži aplikacije za: planiranje troškova rada, analitiku i mjerenje procesa upravljanja ljudskim resursima, planiranje potreba za zapošljavanjem i analitiku za potrebe upravljanja talentima. Ne uključuje analitiku konkurenata koja pripada drugim modulima.",
+        "answers": [
+            {
+                "text": "Planiranje troškova rada",
+                "correct": true
+            },
+            {
+                "text": "Analitika konkurenata",
+                "correct": false
+            },
+            {
+                "text": "Analitika i mjerenje procesa upravljanja ljudskim resursima",
+                "correct": true
+            },
+            {
+                "text": "Planiranje potreba za zapošljavanjem",
+                "correct": true
+            },
+            {
+                "text": "Analitika za potrebe upravljanja talentima",
+                "correct": true
+            }
+        ]
+    },
+    {
+        "text": "U modulu strateškog planiranja poslovanja pronalazimo aplikacije: usklađivanje s pravnom regulativom i standardima struke, opće strateško planiranje, strateško financijsko planiranje, planiranje unutarnjih ulaganja, planiranje vanjskih ulaganja.",
+        "answers": [
+            {
+                "text": "Točno",
+                "correct": true
+            },
+            {
+                "text": "Netočno",
+                "correct": false
+            }
+        ]
+    },
+    {
+        "text": "Označi u kojem modulu pronalazimo aplikaciju izvještavanje o značajnim obilježjima TPI-a",
+        "answers": [
+            {
+                "text": "Modul pribavljanja i deaktiviranje TPI-a",
+                "correct": false
+            },
+            {
+                "text": "Modul tehničkog upravljanja i održavanja trajne poslovne imovine",
+                "correct": false
+            },
+            {
+                "text": "Modul upravljanja portfeljem TPI-a",
+                "correct": true
+            }
+        ]
+    },
+    {
+        "text": "Pod pojmom trajna dugotrajna imovina podrazumijevaju se materijali i sirovine koje će biti potrošeni u jednom proizvodnom ciklusu.",
+        "answers": [
+            {
+                "text": "Točno",
+                "correct": false
+            },
+            {
+                "text": "Netočno",
+                "correct": true
+            }
+        ]
+    },
+    {
+        "text": "Označi u kojem modulu pronalazimo aplikaciju praćenje i analiza ukupnih troškova TPI-a",
+        "answers": [
+            {
+                "text": "Modul upravljanja portfeljem TPI-a",
+                "correct": false
+            },
+            {
+                "text": "Modul tehničkog upravljanja i održavanja trajne poslovne imovine",
+                "correct": true
+            },
+            {
+                "text": "Modul pribavljanja i deaktiviranje TPI-a",
+                "correct": false
+            }
+        ]
+    },
+    {
+        "text": "Označi aplikaciju koja se odnosi na sustavno praćenje tehnoloških inovacija i njihovo uvođenje u poslovne procese poduzeća.",
+        "answers": [
+            {
+                "text": "Aplikacija praćenja postupaka održavanja i popravaka TPI-a",
+                "correct": false
+            },
+            {
+                "text": "Aplikacija planiranje redovitog, povremenog i prigodnog održavanja TPI-a",
+                "correct": false
+            },
+            {
+                "text": "Aplikacija praćenja i analiza ukupnih troškova TPI-a",
+                "correct": false
+            },
+            {
+                "text": "Aplikacija planiranja modernizacije TPI-a",
+                "correct": true
+            }
+        ]
+    },
+    {
+        "text": "IPS upravljanja trajnom poslovnom imovinom (TPI) ima 3 modula: modul pribavljanja i deaktiviranja TPI-a, modul upravljanja portfeljem TPI-a i modul tehničkog upravljanja i održavanja TPI-a.",
+        "answers": [
+            {
+                "text": "Točno",
+                "correct": true
+            },
+            {
+                "text": "Netočno",
+                "correct": false
+            }
+        ]
+    },
+    {
+        "text": "U kratkotrajnu imovinu spadaju materijali i sirovine.",
+        "answers": [
+            {
+                "text": "Točno",
+                "correct": true
+            },
+            {
+                "text": "Netočno",
+                "correct": false
+            }
+        ]
+    },
+    {
+        "text": "Aplikaciju praćenje i analize ukupnih troškova kratkotrajne poslovne imovine pronalazimo u modulu tehničkog upravljanja i održavanja trajne poslovne imovine.",
+        "answers": [
+            {
+                "text": "Točno",
+                "correct": false
+            },
+            {
+                "text": "Netočno",
+                "correct": true
+            }
+        ]
+    },
+    {
+        "text": "Označi aplikacije koje pronalazimo u modulu upravljanja radnim i poslovnim procesima ljudi",
+        "answers": [
+            {
+                "text": "upravljanje učinkovitošću zaposlenika",
+                "correct": false
+            },
+            {
+                "text": "učenje i uvježbavanje",
+                "correct": false
+            },
+            {
+                "text": "matična evidencija i administracija zaposlenika",
+                "correct": true
+            },
+            {
+                "text": "kompenzacijski menadžment",
+                "correct": false
+            },
+            {
+                "text": "obračun plaća i ostalih naknada za rad",
+                "correct": true
+            },
+            {
+                "text": "upravljanje radnim vremenom",
+                "correct": true
+            },
+            {
+                "text": "upravljanje zapošljavanjem",
+                "correct": false
+            },
+            {
+                "text": "upravljanje karijerom",
+                "correct": false
+            },
+            {
+                "text": "organizacijsko upravljanje",
+                "correct": true
+            }
+        ]
+    },
+    {
+        "text": "Označi aplikacije koje pronalazimo u modulu upravljanja talentima i razvojem ljudskih potencijala",
+        "answers": [
+            {
+                "text": "upravljanje zapošljavanjem",
+                "correct": true
+            },
+            {
+                "text": "upravljanje učinkovitošću zaposlenika",
+                "correct": true
+            },
+            {
+                "text": "upravljanje radnim vremenom",
+                "correct": false
+            },
+            {
+                "text": "upravljanje karijerom",
+                "correct": true
+            },
+            {
+                "text": "obračun plaća i ostalih naknada za rad",
+                "correct": false
+            },
+            {
+                "text": "učenje i uvježbavanje",
+                "correct": true
+            },
+            {
+                "text": "kompenzacijski menadžment",
+                "correct": true
+            },
+            {
+                "text": "matična evidencija i administracija zaposlenika",
+                "correct": false
+            },
+            {
+                "text": "organizacijsko upravljanje",
+                "correct": false
+            }
+        ]
+    },
+    {
+        "text": "Aplikacija 'učenje i uvježbavanje' u slučaju onih zaposlenika koji su upućeni na daljnje školovanje i usavršavanje, prati njihovo napredovanje i izvršavanje dodatnih obaveza koje su preuzeli.",
+        "answers": [
+            {
+                "text": "Točno",
+                "correct": false
+            },
+            {
+                "text": "Netočno",
+                "correct": true
+            }
+        ]
+    },
+    {
+        "text": "Od koliko glavnih modula se sastoji IPS upravljanja ljudskim resursima?",
+        "answers": [
+            {
+                "text": "2",
+                "correct": true
+            }
+        ]
+    },
+    {
+        "text": "IPS upravljanja ljudskim resursima sastoji se od modula upravljanja radnim i poslovnim procesima ljudi i modula upravljanja talentima i razvoja ljudskih potencijala.",
+        "answers": [
+            {
+                "text": "Točno",
+                "correct": true
+            },
+            {
+                "text": "Netočno",
+                "correct": false
+            }
+        ]
+    },
+    {
+        "text": "Matična evidencija i administracija zaposlenika prilikom zapošljavanja ne treba prikupiti podatke o svakom djelatniku budući da se neki određeni podaci kao npr. bračno stanje, adresa boravka učestalo mijenjaju.",
+        "answers": [
+            {
+                "text": "Točno",
+                "correct": false
+            },
+            {
+                "text": "Netočno",
+                "correct": true
+            }
+        ]
+    },
+    {
+        "text": "Aplikacija obračun plaća i ostalih naknada u poslovnoj praksi je izrazito kritična.",
+        "answers": [
+            {
+                "text": "Točno",
+                "correct": true
+            },
+            {
+                "text": "Netočno",
+                "correct": false
+            }
+        ]
+    },
+    {
+        "text": "Označi od kojih se modula sastoji IPS računovodstva i upravljanja financijama poduzeća",
+        "answers": [
+            {
+                "text": "modul računovodstvenog praćenja dugotrajne imovine",
+                "correct": false
+            },
+            {
+                "text": "modul računovodstvenog praćenja zaliha sirovina",
+                "correct": false
+            },
+            {
+                "text": "modul glavne knjige",
+                "correct": true
+            },
+            {
+                "text": "modul analitičkog knjigovodstva i ostalih pomoćnih knjiga",
+                "correct": true
+            }
+        ]
+    },
+    {
+        "text": "Označi aplikacije modula glavne knjige:",
+        "answers": [
+            {
+                "text": "Kontrola poslovanja s dugotrajnom imovinom",
+                "correct": false
+            },
+            {
+                "text": "Knjiga inventara",
+                "correct": false
+            },
+            {
+                "text": "Izvještavanje iz glavne knjige",
+                "correct": true
+            },
+            {
+                "text": "Kontrolni postupci na razini glavne knjige",
+                "correct": true
+            },
+            {
+                "text": "Obrada knjigovodstvenih isprava poduzeća",
+                "correct": true
+            }
+        ]
+    },
+    {
+        "text": "Označi module analitičkog knjigovodstva i ostalih poslovnih knjiga:",
+        "answers": [
+            {
+                "text": "Modul računovodstvenog praćenja proizvodnje i zaliha gotovih proizvoda",
+                "correct": true
+            },
+            {
+                "text": "Modul glavne knjige",
+                "correct": false
+            },
+            {
+                "text": "Modul računovodstvenog praćenja zaliha sirovina i materijala",
+                "correct": true
+            },
+            {
+                "text": "Modul obračuna plaća djelatnika",
+                "correct": true
+            },
+            {
+                "text": "Modul računovodstvenog praćenja zaliha trgovačke robe",
+                "correct": true
+            },
+            {
+                "text": "Modul saldakonti kupaca i dobavljača",
+                "correct": true
+            },
+            {
+                "text": "Modul računovodstvenog praćenja dugotrajne imovine",
+                "correct": true
+            }
+        ]
+    },
+    {
+        "text": "Označi aplikacije iz modula knjigovodstvenog praćenja dugotrajne imovine:",
+        "answers": [
+            {
+                "text": "Izvještavanje o materijalnom poslovanju",
+                "correct": false
+            },
+            {
+                "text": "Analitičko knjigovodstvo dugotrajne imovine",
+                "correct": true
+            },
+            {
+                "text": "Kontrola materijalnog poslovanja",
+                "correct": false
+            },
+            {
+                "text": "Evidencija zaliha sirovina i materijala u poslovnim knjigama",
+                "correct": false
+            },
+            {
+                "text": "Knjiga inventara",
+                "correct": true
+            },
+            {
+                "text": "Kontrola poslovanja s dugotrajnom imovinom",
+                "correct": true
+            },
+            {
+                "text": "Izvještavanje o dugotrajnoj imovini",
+                "correct": true
+            }
+        ]
+    },
+    {
+        "text": "Označi aplikacije modula računovodstvenog praćenja zaliha trgovačke robe",
+        "answers": [
+            {
+                "text": "Evidencija trgovačke robe u poslovnim knjigama",
+                "correct": true
+            },
+            {
+                "text": "Kontrola poslovanja s kupcima i dobavljačima",
+                "correct": false
+            },
+            {
+                "text": "Kontrola robnog poslovanja",
+                "correct": true
+            },
+            {
+                "text": "Evidencija poslovanja s kupcima i dobavljačima",
+                "correct": false
+            },
+            {
+                "text": "Izvještavanje o poslovanju s kupcima i dobavljačima",
+                "correct": false
+            },
+            {
+                "text": "Izvještavanje o robnom poslovanju",
+                "correct": true
+            }
+        ]
+    },
+    {
+        "text": "Označi aplikacije modula računovodstvenog praćenja zaliha sirovina i materijala:",
+        "answers": [
+            {
+                "text": "Kontrolni postupci na razini proizvodnje i zaliha gotovih proizvoda",
+                "correct": false
+            },
+            {
+                "text": "Evidencija zaliha sirovina i materijala u poslovnim knjigama",
+                "correct": true
+            },
+            {
+                "text": "Kontrola materijalnog poslovanja",
+                "correct": true
+            },
+            {
+                "text": "Izvještavanje o proizvodnji i gotovim proizvodima",
+                "correct": false
+            },
+            {
+                "text": "Evidencija proizvodnje i zaliha gotovih proizvoda u poslovnim knjigama",
+                "correct": false
+            },
+            {
+                "text": "Izvještavanje o materijalnom poslovanju",
+                "correct": true
+            }
+        ]
+    },
+    {
+        "text": "Izvještavanje o poslovanju s kupcima i dobavljačima može se ostvariti i na analitičkoj i na sintetičkoj razini.",
+        "answers": [
+            {
+                "text": "Točno",
+                "correct": true
+            },
+            {
+                "text": "Netočno",
+                "correct": false
+            }
+        ]
+    },
+    {
+        "text": "Kontrola poslovanja s kupcima i dobavljačima provodi se samo unutar poduzeća.",
+        "answers": [
+            {
+                "text": "Točno",
+                "correct": false
+            },
+            {
+                "text": "Netočno",
+                "correct": true
+            }
+        ]
+    },
+    {
+        "text": "Kontrolni postupci vezani uz zalihe trgovačke robe mogu se u određenoj mjeri poistovjetiti s postupcima kontrole zaliha gotovih proizvoda.",
+        "answers": [
+            {
+                "text": "Točno",
+                "correct": true
+            },
+            {
+                "text": "Netočno",
+                "correct": false
+            }
+        ]
+    },
+    {
+        "text": "Aplikacija glavne knjige osnovni je modul IPS-a računovodstva i upravljanja financijama u kojemu se sažimaju sve detaljne informacije o svakom segmentu poslovanja poduzeća.",
+        "answers": [
+            {
+                "text": "Točno",
+                "correct": true
+            },
+            {
+                "text": "Netočno",
+                "correct": false
+            }
+        ]
+    },
+    {
+        "text": "Označi na koja područja se dijeli industrijska logistika",
+        "answers": [
+            {
+                "text": "Logistiku proizvodnje",
+                "correct": true
+            },
+            {
+                "text": "Logistiku nabave",
+                "correct": true
+            },
+            {
+                "text": "Logistiku distibucije",
+                "correct": true
+            },
+            {
+                "text": "Logistiku prodaje",
+                "correct": false
+            },
+            {
+                "text": "Logistiku marketinga",
+                "correct": false
+            }
+        ]
+    },
+    {
+        "text": "Označi module koji pripadaju IPS-u nabave i ulazne logistike",
+        "answers": [
+            {
+                "text": "Modul potrebe u potrošnim dobrima",
+                "correct": false
+            },
+            {
+                "text": "Modul ulazne logistike",
+                "correct": true
+            },
+            {
+                "text": "Modul upravljanja zalihama i skladišnim poslovanjem",
+                "correct": true
+            },
+            {
+                "text": "Modul narudžba",
+                "correct": false
+            },
+            {
+                "text": "Modul suradnje s dobavljačima",
+                "correct": true
+            },
+            {
+                "text": "Modul pripreme nabave i naloga za nabavu",
+                "correct": true
+            }
+        ]
+    },
+    {
+        "text": "Označi koje aplikacije pripadaju modulu pripreme nabave i naloga za zabavu",
+        "answers": [
+            {
+                "text": "Priprema naloga za nabavu potrošnih dobara",
+                "correct": true
+            },
+            {
+                "text": "Uspostavljanje i razvoj suradnje s dobavljačima",
+                "correct": false
+            },
+            {
+                "text": "Konsolidacija potreba u potrošnim dobrima i planiranju nabave",
+                "correct": true
+            },
+            {
+                "text": "Obrada ulaznih računa",
+                "correct": false
+            },
+            {
+                "text": "Analiza potreba u potrošnim dobrima",
+                "correct": true
+            }
+        ]
+    },
+    {
+        "text": "Označi aplikacije modula suradnja s dobavljačima",
+        "answers": [
+            {
+                "text": "Izrada narudžbe za nabavu",
+                "correct": true
+            },
+            {
+                "text": "Izlaz dobara iz skladišta",
+                "correct": false
+            },
+            {
+                "text": "Uspostavljanje i razvoj suradnje s dobavljačima",
+                "correct": true
+            },
+            {
+                "text": "Potvrda narudžbe",
+                "correct": true
+            },
+            {
+                "text": "Organizacija dražbe i prikupljanje ponuda",
+                "correct": true
+            },
+            {
+                "text": "Prijam i kontrola ulaza i potrošenih dobara",
+                "correct": false
+            },
+            {
+                "text": "Obrada ulaznih računa",
+                "correct": true
+            },
+            {
+                "text": "Praćenje zaliha i upravljanje skladištem",
+                "correct": false
+            }
+        ]
+    },
+    {
+        "text": "Označi aplikacije modula ulazne logistike",
+        "answers": [
+            {
+                "text": "Praćenje zaliha i upravljanje skladištem",
+                "correct": false
+            },
+            {
+                "text": "Utvrđivanje redoslijeda dostava",
+                "correct": true
+            },
+            {
+                "text": "Obrada dostavne i transportne dokumentacije",
+                "correct": true
+            },
+            {
+                "text": "Prihvat isporuka",
+                "correct": true
+            },
+            {
+                "text": "Prijam i kontrola ulaza potrošnih dobara",
+                "correct": false
+            }
+        ]
+    },
+    {
+        "text": "Označi aplikacije modula upravljanja zalihama i skladišnim poslovanjem",
+        "answers": [
+            {
+                "text": "Prijam i kontrola ulaza i potrošenih dobara",
+                "correct": true
+            },
+            {
+                "text": "Obrada ulaznih računa",
+                "correct": false
+            },
+            {
+                "text": "Organizacija dražbe i prikupljanje ponuda",
+                "correct": false
+            },
+            {
+                "text": "Izlaz dobara iz skladišta",
+                "correct": true
+            },
+            {
+                "text": "Izrada narudžbe za nabavu",
+                "correct": false
+            },
+            {
+                "text": "Uspostavljanje i razvoj suradnje s dobavljačima",
+                "correct": false
+            },
+            {
+                "text": "Praćenje zaliha i upravljanje skladištem",
+                "correct": true
+            },
+            {
+                "text": "Potvrda narudžbe",
+                "correct": false
+            }
+        ]
+    },
+    {
+        "text": "Osnovni cilj uspostavljanja suradnje s dobavljačima za kojega se poduzeće odlučilo jest pripremanje narudžbe za nabavu.",
+        "answers": [
+            {
+                "text": "Točno",
+                "correct": true
+            },
+            {
+                "text": "Netočno",
+                "correct": false
+            }
+        ]
+    },
+    {
+        "text": "Nabava u širem smislu podrazumijeva odvijanje operativnih poslovnih poslova u procesu pribavljanja objekata nabave, dok nabava u užem smislu obuhvaća i strategijske zadatke o kojima ovise i učinci i dobit poslovnog sustava.",
+        "answers": [
+            {
+                "text": "Točno",
+                "correct": false
+            },
+            {
+                "text": "Netočno",
+                "correct": true
+            }
+        ]
+    },
+    {
+        "text": "Poslovna logistika obuhvaća sustavno praćenje kretanja roba od dobavljača do potrošača u svrhu ostvarenja ravnomjernog i što boljeg iskorištavanja kapaciteta sredstava i djelatnika u prijevozu, primanju, skladištenju, držanju zaliha i izdravanju robe kao i s njima vezanih procesa pakiranja, označivanja te obrade i tijeka podataka.",
+        "answers": [
+            {
+                "text": "Točno",
+                "correct": true
+            },
+            {
+                "text": "Netočno",
+                "correct": false
+            }
+        ]
+    },
+    {
+        "text": "Priprema nabave polazi od analize potreba funkcije proizvodnje i ostalih poslovnih funkcija za nabavom potrebnih sirovina, materijala i ostalih potrošenih dobara.",
+        "answers": [
+            {
+                "text": "Točno",
+                "correct": true
+            },
+            {
+                "text": "Netočno",
+                "correct": false
+            }
+        ]
+    },
+    {
+        "text": "Označi module od kojih se sastoji informacijski podsustav proizvodnje",
+        "answers": [
+            {
+                "text": "Modul planiranja i pripreme prozivodnje",
+                "correct": true
+            },
+            {
+                "text": "Modul upravljanja konkurentnim proizvodima",
+                "correct": false
+            },
+            {
+                "text": "Modul upravljanja kvalitetom i razvojem proizvoda",
+                "correct": true
+            },
+            {
+                "text": "Modul upravljanja prodajom",
+                "correct": false
+            },
+            {
+                "text": "Modul upravljanja proizvodnjom",
+                "correct": true
+            }
+        ]
+    },
+    {
+        "text": "Označi koje aplikacije pronalazimo u modulu upravljanja kvalitetom i razvojem proizvoda",
+        "answers": [
+            {
+                "text": "Upravljanje kvalitetom",
+                "correct": true
+            },
+            {
+                "text": "Aplikacija upravljanja proizvodom",
+                "correct": false
+            },
+            {
+                "text": "Razvoj novih proizvoda",
+                "correct": true
+            }
+        ]
+    },
+    {
+        "text": "Zalihe u proizvodnji se mogu podijeliti na:",
+        "answers": [
+            {
+                "text": "Zalihe gotovih proizvoda",
+                "correct": true
+            },
+            {
+                "text": "Zalihe poluproizvoda",
+                "correct": true
+            },
+            {
+                "text": "Zalihe inventara",
+                "correct": false
+            },
+            {
+                "text": "Zalihe sirovina",
+                "correct": true
+            }
+        ]
+    },
+    {
+        "text": "Upiši koja japanska riječ se koristi za načina proizvodnje koji započinje kad se dobije odgovarajući signal s tržišta.",
+        "type": "fill-in-the-blank",
+        "category": "Predavanje 13",
+        "correctAnswer": [
+            "kanban",
+            "Kanban"
+        ]
+    },
+    {
+        "text": "MRP II podržava planiranje i upravljanje svim komponentama proizvodnje, uključujući radnu snagu, opremu i sva potrebna sredstva koja sudjeluju u proizvodnji.",
+        "answers": [
+            {
+                "text": "Točno",
+                "correct": true
+            },
+            {
+                "text": "Netočno",
+                "correct": false
+            }
+        ]
+    },
+    {
+        "text": "Sustavi MRP služe za planiranje potreba za sirovinama i zalihama za proizvodnju. Ovaj sustav uključuje planiranje i upravljanje opremom, radnom snagom i sredstvima u proizvodnji.",
+        "answers": [
+            {
+                "text": "Točno",
+                "correct": false
+            },
+            {
+                "text": "Netočno",
+                "correct": true
+            }
+        ]
+    },
+    {
+        "text": "Planiranje proizvodnje guranjem označava da se gotovi artikli guraju u prodaju.",
+        "answers": [
+            {
+                "text": "Točno",
+                "correct": true
+            },
+            {
+                "text": "Netočno",
+                "correct": false
+            }
+        ]
+    },
+    {
+        "text": "Svako poduzeće koje teži rastu i razvoju mora ulagati znatne napore i sredstva u kontrolu kvalitete postojećih i razvoj novih proizvoda.",
+        "answers": [
+            {
+                "text": "Točno",
+                "correct": true
+            },
+            {
+                "text": "Netočno",
+                "correct": false
+            }
+        ]
+    },
+    {
+        "text": "Upravljanje proizvodnjom obuhvaća upravljanje zalihama u proizvodnji i upravljanje proizvodnim procesima.",
+        "answers": [
+            {
+                "text": "Točno",
+                "correct": true
+            },
+            {
+                "text": "Netočno",
+                "correct": false
+            }
+        ]
+    },
+    {
+        "text": "Označi aplikacije modula poticanja na kupnju i sofisticiranih oblika prodaje",
+        "answers": [
+            {
+                "text": "Planiranje akcija poticanja na kupnju",
+                "correct": true
+            },
+            {
+                "text": "Potpora sofisticiranim oblicima prodaje",
+                "correct": true
+            },
+            {
+                "text": "Potpora akcijama poticanja na kupnju",
+                "correct": true
+            }
+        ]
+    },
+    {
+        "text": "Označi aplikacije modula upravljanja izlaznom logistikom i transportom",
+        "answers": [
+            {
+                "text": "Upravljanje transportom",
+                "correct": true
+            },
+            {
+                "text": "Upravljanje isporukom",
+                "correct": true
+            },
+            {
+                "text": "Upravljanje zalihama i skladištenjem gotovih proizvoda",
+                "correct": true
+            }
+        ]
+    },
+    {
+        "text": "Označi aplikacije modula narudžbama u prodaji",
+        "answers": [
+            {
+                "text": "Fakturiranje",
+                "correct": true
+            },
+            {
+                "text": "Obrada upita klijenata",
+                "correct": true
+            },
+            {
+                "text": "Oragnizacija i upravljanje aukcijama",
+                "correct": true
+            },
+            {
+                "text": "Upravljanje profilima klijenata",
+                "correct": true
+            },
+            {
+                "text": "Podnošenje konkretnih ponuda",
+                "correct": true
+            },
+            {
+                "text": "Upravljanje kupoprodajnim ugovorima",
+                "correct": true
+            },
+            {
+                "text": "Upravljanje povratnom ambalažom",
+                "correct": true
+            }
+        ]
+    },
+    {
+        "text": "Označi aplikacije modula upravljanje poslijeprodajnim uslugama",
+        "answers": [
+            {
+                "text": "Potpora uslugama održavanja i popravaka nakon isteka jamstvenog roka",
+                "correct": true
+            },
+            {
+                "text": "Potpora uslugama nadogradnje i proširenja funkcionalnosti",
+                "correct": true
+            },
+            {
+                "text": "Evidencija intervencija u jamstvenom roku",
+                "correct": true
+            },
+            {
+                "text": "Rješavanje reklamacija kupaca",
+                "correct": true
+            }
+        ]
+    },
+    {
+        "text": "Modul pružanja stručnih savjeta i usluga se sastoji od aplikacija: stručno savjetovanje i obrazovanje i uvježbavanje korisnika",
+        "answers": [
+            {
+                "text": "Točno",
+                "correct": true
+            },
+            {
+                "text": "Netočno",
+                "correct": false
+            }
+        ]
+    },
+    {
+        "text": "Ulaznom logistikom se najčešće bavi dobavljač ulaznih sirovina, materijala i ostalih dobara dok je izlazna logistika najčešće zadatak prodavatelja.",
+        "answers": [
+            {
+                "text": "Točno",
+                "correct": true
+            },
+            {
+                "text": "Netočno",
+                "correct": false
+            }
+        ]
+    },
+    {
+        "text": "Modul upravljanje narudžbama u prodaji informatički podržava isključivo samo čin kupoprodaje.",
+        "answers": [
+            {
+                "text": "Točno",
+                "correct": false
+            },
+            {
+                "text": "Netočno",
+                "correct": true
+            }
+        ]
+    },
+    {
+        "text": "Označi koje modalitete nalazimo prilikom izgradnje informacijskog sustava",
+        "answers": [
+            {
+                "text": "Vlastiti razvoj",
+                "correct": true
+            },
+            {
+                "text": "Kupnja gotovog rješenja",
+                "correct": true
+            },
+            {
+                "text": "Vanjski razvoj",
+                "correct": true
+            },
+            {
+                "text": "Unajmljivanje gotovog rješenja",
+                "correct": true
+            },
+            {
+                "text": "Unutarnji razvoj",
+                "correct": false
+            }
+        ]
+    },
+    {
+        "text": "Unesi kraticu za životni ciklus razvoja sustava.",
+        "type": "fill-in-the-blank",
+        "category": "Predavanje 1",
+        "correctAnswer": [
+            "SDLC",
+            "sdlc",
+            "System Development Life Cycle",
+            "Software Development Life Cycle"
+        ]
+    },
+    {
+        "text": "Faza ___ u životnom ciklusu sustava usmjerena je na stabilizaciju i optimiziranje sustava nakon uspješne implementacije.",
+        "type": "fill-in-the-blank",
+        "category": "Predavanje 1",
+        "correctAnswer": [
+            "konsolidacije",
+            "konsolidacija"
+        ]
+    },
+    {
+        "text": "U CPM-u, ___ označava najranije moguće vrijeme početka aktivnosti s obzirom na njezine prethodne aktivnosti.",
+        "type": "fill-in-the-blank",
+        "correctAnswer": [
+            "early start",
+            "Early Start"
+        ]
+    },
+    {
+        "text": "U PERT-u, ___ za pojedinu aktivnost izračunava se pomoću formule: TE = (TE + 4TM + TL) / 6",
+        "type": "fill-in-the-blank",
+        "correctAnswer": [
+            "expected time",
+            "Expected Time"
+        ]
+    },
+    {
+        "text": "Lanac vrijednosti uspostavlja ___ aspekta konkurentskog krajolika.",
+        "type": "fill-in-the-blank",
+        "correctAnswer": [
+            "4"
+        ]
+    }
+]
